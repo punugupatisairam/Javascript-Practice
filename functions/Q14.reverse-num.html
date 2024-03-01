@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //Write a function which can to display the reverse of a given number
+        function rev(a)
+        {
+            var rem = 0;
+            var res = 0;
+            while(a)
+            {
+                rem = a%10;
+                res = res*10+rem;
+                a =parseInt(a/10);
+            }
+        console.log(res);
+        }
+        rev(12398)
+    </script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: lemonchiffon;
+        }
+
+        #md {
+            margin-left: 500px;
+            margin-top: 50px;
+        }
+
+        h1 {
+            font-size: 60px;
+            color: red;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        button {
+            margin-left: 50px;
+            background-color: orange;
+            font-size: 25px;
+            border-radius: 5px;
+        }
+
+        h6 {
+            /* list-style-type: none; */
+            font-size: 15px;
+            color: red;
+            padding-left: 25px;
+            padding-right: 15px;
+        }
+
+        img {
+            border-radius: 50px;
+            width: 100px;
+            height: 100px;
+            margin-top: 25px;   
+            margin-left: 80px;
+        }
+
+        label {
+            color: red;
+            font-size: 25px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #res {
+            /* margin-top: 80px;
+            margin-left: 80px; */
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .abc {
+            background-color: yellow;
+            border: 3px solid darkred;
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+            position: relative;  
+            margin: 20px;
+
+        }
+        .clo{
+            cursor: pointer;
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            /* padding-top: 20px; */
+            /* margin-right: 20px; */
+            font-size: 25px;
+        }
+
+        .edit {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            cursor: pointer;
+            font-size: 20px;
+            /* padding: 20px; */
+        
+        } 
+    </style>
+</head>
+
+<body>
+    <h1>Add Contact Cards</h1>
+    <div id="md">
+
+        <label>Name :</label><input type="text" name="" id="pname"><br><br>
+        <label>Number :</label><input type="text" name="" id="num"><br><br>
+        <label>Email :</label><input type="text" name="" id="mail"><br><br>
+        <label>Enter Image URL :</label> <input type="text" name="" id="url"><br><br><br>
+        <button onclick="addcon()" id="adcon">Add Contact</button><br>
+        <button onclick="savecon()" id="savcon">Save Contact</button>
+    </div>
+
+    <div id="res"></div>
+
+    <script>
+        var currentindex;
+        var imgurl = document.getElementById('url')
+        var name1 = document.getElementById('pname')
+        var num1 = document.getElementById('num')
+        var mail1 = document.getElementById('mail')
+        var carddata = document.getElementById('res')
+        var addcont = document.getElementById('adcon')
+        var savecont = document.getElementById('savcon')
+
+        savecont.style.display = 'none'
+        var res = []
+
+        function addcon() {
+
+            var obj = {
+                imageurl: url.value,
+                firstname: pname.value,
+                number: num.value,
+                mail: mail.value,
+            }
+            res.push(obj)
+            gencard(res)
+
+        }
+        function gencard(data) {
+            carddata.innerHTML = '';
+            data.forEach(function (mylist, index) {
+                var close = document.createElement('span')
+                var mdiv = document.createElement('div')
+                var pimg = document.createElement('img')
+                var fh6 = document.createElement('h6')
+                var sh6 = document.createElement('h6')
+                var th6 = document.createElement('h6')
+                var but = document.createElement('button')
+                but.innerHTML = 'Edit'
+                but.onclick = function () {
+                    imgurl.value = mylist.imageurl
+                    name1.value = mylist.firstname
+                    num1.value = mylist.number
+                    mail1.value = mylist.mail
+                    currentindex = index;
+                    savecont.style.display = 'inline-block'
+                    addcont.style.display = 'none'
+                }
+
+                close.onclick=function(){
+                    res.splice(index,1)
+                    gencard(res)
+                }
+                close.innerHTML = '&#10006;'
+                close.style.cursor='pointer'
+                pimg.src = mylist.imageurl
+                fh6.innerHTML = 'Name :' + mylist.firstname
+                sh6.innerHTML = 'Number :' + mylist.number
+                th6.innerHTML = 'Email :' + mylist.mail
+                mdiv.appendChild(close)
+                mdiv.appendChild(pimg)
+                mdiv.appendChild(but)
+                mdiv.appendChild(fh6)
+                mdiv.appendChild(sh6)
+                mdiv.appendChild(th6)
+                carddata.appendChild(mdiv)
+                close.className = 'clo'
+                mdiv.className = 'abc'
+                but.className = 'edit'
+                // carddata.value=''
+            })
+
+        }
+        function savecon() {
+            var obj2 = {
+                imageurl: url.value,
+                firstname: pname.value,
+                number: num.value,
+                mail: mail.value,
+            }
+            res[currentindex] = obj2;
+            gencard(res)
+            addcont.style.display = 'inline-block'
+            savecont.style.display = 'none'
+        }
+
+
+    </script>
+</body>
+
+</html>

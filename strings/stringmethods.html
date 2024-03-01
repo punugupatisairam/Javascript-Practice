@@ -1,0 +1,122 @@
+charCodeAt()
+charAt()
+codePointAt()
+at()
+slice()
+split()
+toUppercase()
+toLowercase()
+padEnd()
+padStart()
+concat()
+repeat()
+replace()
+replaceAll()
+trim()
+trimstart()
+trimend()
+substring()
+
+
+index()
+indexOf()
+lastIndexOf()
+search()
+includes()
+match()
+matchAll()
+startsWith(
+endswith()
+)
+
+<script>
+    //1)wap to reverse the string
+    var str = "sudhakar sairam"
+    var strnew = "jesus" 
+    /*var ar1 = str.split(""); //slpit returns array value
+    var ar2 = ar1.reverse();   //reverse returns array value
+    var str1 = ar2.join("");   //join returns string value
+    console.log(str1); */
+    
+    /*var str2 = str.split("").reverse().join("")
+    console.log(str2); */
+
+    //2)wap to replace and replaceAll the gien text
+    var str2 = str.replace("sudhakar", "jesus")
+    var str2 = str.replaceAll("dh","@")
+    console.log(str2);
+
+    //3)wap to slice the given text
+    var str2 = str.slice(-3)
+    var str2 = str.slice(1,5)
+    var str2 = str.slice(-6)
+    var str2 = str.slice("@2")
+    console.log(str2);
+
+    //4)wap to padStart and padEnd
+    str2 = str.padStart(10, ".")
+    str2 = str.padStart(str.length + 2, ".")
+    str2 = str.padEnd(10, ".")
+    str2 = str.padEnd(str.length + 2, ".")
+    console.log(str2);
+
+    //5)wap to repeate the given string
+    var another = "sairam"
+    var str2 = another + str.repeat(3)
+    console.log(str2);
+
+    //6)wap to to check the given text startswith and endswith in the text or not.
+    str2 = str.startsWith("s")//true
+    str2 = str.startsWith("r")//false
+    str2 = str.endsWith("r")//true
+    str2 = str.endsWith("s")///false it returns the boolean value
+    console.log(str2);
+
+    //7)wap to concat the two given strings
+    var str2 = str.concat(strnew)
+    console.log(str2);
+    var str2 = str.concat("happy new year");
+    console.log(str2);
+
+
+    //8)wap to find index of the character
+    str2 = str.indexOf("r")
+    console.log(str2);
+
+    //9)wap to slce the given text
+    var str2 = str.slice(2,4)
+    console.log(str2);//it will cut/slice the values according to arguments the first argument will be the starting to slice and second argument will be ending to slice 
+
+    //10)wap to find the ASCII or Unary Number of the text character
+    var str2 = str.codePointAt(-4)
+    console.log(str2);//qit will see index wise character and returns character unicode number (r=97)
+
+    //11)wap to check the character by index of number
+    str2 = str.at(2)
+    console.log(str2);
+    console.log(str.at(90));//if i give this argument that will shown undefined beacuse that value of index is not there in string it is beyond of the index
+    console.log(str.at(-1)); //it gives particular index character but this doesn't happened in charCodeAt. it accept negative values
+
+
+    //12)wap to check the character by index of number
+    console.log(str.charCodeAt(2));
+    console.log(str.charCodeAt(100)); //it show's NaN , it doesn't accept negative values
+
+
+    //13)wap to check the character by index of number
+    console.log(str.charAt(-1));//it doesn't accept negative values , and in this scinario ,so it doesn't print any value
+    console.log(str.charAt(5));//it will display the charcater if we gave index of number
+
+
+    //wap to check the character whether it is there or not in given text
+    str2 = str.includes("k")
+    console.log(str.includes("r"));//it will check the whether the given argument is there or not in the string, & it rreturns boolean value
+    console.log(str2);
+
+    //console.log(s.splice(2,4)); //splice is not a string method
+    var st = "karim"
+    var str2 = st.indexOf("k")
+    console.log(str2);
+
+
+</script>

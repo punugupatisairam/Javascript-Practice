@@ -1,0 +1,31 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //6)Write a function which can check a given number is prime number or not
+        function prime(a) {
+            var c = 0;
+            for (var i = 1; i <= a; i++) {
+                if (a % i === 0) {
+                    c++;
+                }
+            }
+            if (c === 2) {
+                return ("prime");
+            }
+            else {
+                return ("not prime");
+            }
+        }
+        var a = +prompt("Enter a number")
+        console.log(prime(a))
+    </script>
+</body>
+
+</html>

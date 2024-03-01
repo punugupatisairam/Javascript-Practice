@@ -1,0 +1,64 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        img{
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+    </head>
+<body>
+    <div id="bd"></div>
+    <table id="tb">
+
+    </table>
+    <script>
+
+        // $.get('https://fakestoreapi.com/products',function(r){
+        //     r.forEach(a => {
+        //         var tr = document.createElement('tr');
+        //         for(var k in a){
+        //             var ntd = document.createElement('td')
+        //             ntd.innerHTML=a[k].title;
+        //             tr.appendChild(ntd)
+        //         }
+        //         document.getElementById('tb').appendChild(tr)
+        //     });
+        // })
+
+        var data = []
+        var bdiv = document.getElementById('bd')
+        $.get('https://fakestoreapi.com/products', function (response) {
+            data=response
+            gendata(data)
+        })
+        function gendata(arr){
+            console.log(arr);
+        arr.forEach(function(a) {
+            console.log(a);
+            var mdiv = document.createElement('div')
+
+            var div1 = document.createElement('div')
+            var image = document.createElement('img')
+            var title = document.createElement('span')
+            image.src=a.image
+            title.innerHTML=a.title
+            div1.appendChild(image)
+            div1.appendChild(title)
+
+            mdiv.appendChild(div1)
+            bdiv.appendChild(mdiv)
+
+        })
+    }
+        console.log(data);
+    </script>
+</body>
+
+</html>

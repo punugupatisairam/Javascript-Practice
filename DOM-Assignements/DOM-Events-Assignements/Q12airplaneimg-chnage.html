@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 70px;
+            height: 70px;  
+        }
+        #md{
+            margin-top: 70px;
+            margin-left: 400px;
+        }
+        #s1{
+            margin-left: 450px;
+            margin-top: 50px;
+            height: 150px;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div id="md">
+    <img onmouseover="imge(event)" id="img1" src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/201709/travelstory-647_092517052702.jpg?VersionId=eoHQR1mW0AAg_2_hGMtxfOlhgD.ge3e4" alt="">
+    <img onmouseover="imge(event)" id="img2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUIO_lakcSRnOhC4CPdpzdxKSpy8ZnMgh0fg&usqp=CAU" alt="">
+    <img onmouseover="imge(event)" id="img3" src="https://c4.wallpaperflare.com/wallpaper/86/525/239/airoplane-sky-wallpaper-preview.jpg" alt="">
+    </div>
+    <div>
+        <img  id="s1" src=" ">
+        
+    </div>
+
+   <script>
+        var x = document.getElementById('s1')
+        x.style.display='none'
+        function imge(e){
+            // console.log(e);             
+            x.src=e.target.src
+            x.style.display='inline-block'
+        }
+  
+        
+        // function img1(){ 
+        //     document.getElementById('s1').src ='https://akm-img-a-in.tosshub.com/indiatoday/images/story/201709/travelstory-647_092517052702.jpg?VersionId=eoHQR1mW0AAg_2_hGMtxfOlhgD.ge3e4'       
+        //     x.style.display='inline-block'
+
+        // }
+        // function img2(){
+        //     document.getElementById('s1').src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUIO_lakcSRnOhC4CPdpzdxKSpy8ZnMgh0fg&usqp=CAU'
+        //     x.style.display='inline-block'
+        // }
+        // function img3(){
+        //     document.getElementById('s1').src='https://c4.wallpaperflare.com/wallpaper/86/525/239/airoplane-sky-wallpaper-preview.jpg'
+        //     x.style.display='inline-block'
+        // }
+       
+    </script>
+</body>
+</html>

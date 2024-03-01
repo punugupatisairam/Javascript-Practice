@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #edit{
+            border: 4px solid red;
+            margin: 30% 30% ;
+            display: flex;
+            /* align-items: center; */
+            justify-content: center;
+            
+        }
+        #d1{
+            /* text-align: center; */
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="edit">
+    <h1 id="ha"></h1>
+    <button onclick="come()" id="d1">click</button>
+    </div>
+    <script>
+        function come(){
+        var x = document.getElementById('ha')
+        x.innerHTML='Welcome To New DOM Events World'
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="inp1">
+    <button onclick="addtask()">add task</button>
+    <ul id="tasklist">
+    
+    </ul>
+    <script>
+        var inp = document.getElementById('inp1')
+        var tlist = document.getElementById('tasklist')
+        var tasks = [];
+        function addtask(){
+            tlist.innerHTML=''
+            tasks.push(inp.value)
+            
+            genli(tasks)
+           
+        }
+        function genli(arr){
+                arr.forEach(function(mytask){
+                var li = document.createElement('li')
+                li.innerHTML=mytask
+                tlist.appendChild(li)
+            })
+            }
+        // var inp = document.getElementById('inp1')
+        // var tl = document.getElementById('tasklist')
+        // var tasks = [];
+        // function addtask(){
+        //     tl.innerHTML=''
+        //     tasks.push(inp.value);
+        //     tasks.forEach(function(task){
+                
+        //         var li = document.createElement('li')
+        //         li.innerHTML=task
+        //         tl.appendChild(li)
+        //     })
+        // }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="name">sairam</h1>
+    <input type="text" id="s1"><br>
+    <input type="text" id="s2"><br>
+    <button onclick="myevent('event')">click for magic</button>
+    <script>
+       
+        function myevent(r){ 
+            var a = document.getElementById('s1').value;
+            var b = document.getElementById('s2').value;
+            var res = parseInt(a)+parseInt(b);
+            console.log(res);                                 
+        }
+        // var dt= document.getElementById('name')
+        
+          </script>
+</body>
+<!-- 
+                                        EVENT HANDELING
+
+    event       event listner       event handler               event binding                  event object
+    click       onclick             function call(my event)     event listner+event handler    fun parameter/name 
+ -->
+
+ <!-- 
+                                            EVENTS
+
+    Mouse Events           Keyboard Events              Foucs Events        
+    click                  keypress                     blur
+    over                   keyup                        focus
+    out                    keydown
+    drag
+    drop
+
+-->
+</html>

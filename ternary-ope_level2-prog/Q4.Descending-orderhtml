@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*Write a program to print the given three numbers in descending order
+    var a = +prompt("Enter the first number:");
+    var b = +prompt("Enter the second number:");
+    var c = +prompt("Enter the third number:");
+
+    (a >b) ? (a > c) ? (b > c) ? console.log(a, b, c) : console.log(a, c, b) : console.log(c, a, b) : (b > c) ? (a > c) ? console.log(b, a, c) : console.log(b, c, a) : console.log(c, b, a);*/
+    
+
+    var x = +prompt();
+     var y = +prompt();
+     var z = +prompt();
+
+     x>y && y>z?console.log(x,y,z):x>z && z>y?console.log(x,z,y):y>x&&x>z?console.log(y,x,z):y>z&&z>x?console.log(y,z,x): z>x&&x>y?cosnole.log(z,x,y):console.log(z,y,x);
+
+    </script>
+</body>
+</html>

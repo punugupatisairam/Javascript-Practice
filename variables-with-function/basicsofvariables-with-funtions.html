@@ -1,0 +1,77 @@
+<script>
+    var i = 200;            //its global variable
+    function naistam(){
+        var i =100;         //its a local variable
+        console.log(i); //100
+        
+    }
+    naistam()
+
+
+    var i = 200;
+    function nikendhuku(){
+        
+        console.log(i); //undefined in the local scope before the console there is no declaration 
+        var i =900;
+    }
+    nikendhuku()
+
+
+
+    function nuvve(){
+        console.log(i); //100
+        
+    }
+    var i =1000;     //here will get uotput 100 why because the value intialized before the function call
+    nuvve()
+
+
+    function neninthe() {
+        console.log(y);
+        
+    }
+    neninthe()
+    var y = 700;     //here will get undefined why because we intialize the after the function call
+
+
+    // function expression - here will get function definition because the the whole function def is in y  
+    var y = function(){
+        return "hai"
+    }
+    console.log(y);
+
+    //anonymous function
+    var ra = function(a,b){
+        var pora = a+b;
+        return pora; 
+    }
+    var ranu = ra(2,8)
+    console.log(ra);
+
+
+    //call back function
+    function avasrama(a,b,nuvve){
+        var z = a*b;
+        nuvve(z)
+    }
+    avasrama(20,30,function(avasarame)
+    {
+        console.log(avasarame);
+     })
+
+     //Number Count in diff ways
+     var a = 523;
+        var d1 = Math.floor(a/100)
+        var d2 = ((a%100)/10)
+        var d3 = a%10
+        var r1=d1/2;
+        var r2=d2/2;
+        var r3=d3/2;
+        {
+            console.log(parseInt (r1));
+            console.log(parseInt (r2));
+            console.log(parseInt (r3));
+
+        }
+
+</script>

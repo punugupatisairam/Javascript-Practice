@@ -1,0 +1,245 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //1)Write a program to print the sum of 1 to 10 ( initialisation of sum variable with 0 )
+    var a = 10;
+    var i = 1;
+    sum = 0;
+    while(i<=a)
+        {
+            sum = sum + i;
+            i=i+1;
+        }
+    console.log(sum)
+
+    //2)Write a program to print the average of 1 to 10
+    var a = 10;
+    var i = 1;
+    sum = 0;
+    while(i<=a)
+        {
+            sum = sum+i;
+            i=i+1;
+        }
+    console.log(sum/10);
+
+    //3)Write a program to print the sum of the numbers between the given two numbers
+  
+    var a = 10;
+    var i = 5;
+    sum = 0;
+    while(i<=a)
+        {
+            sum = sum + i;
+            i=i+1;
+        }
+    console.log(sum);
+
+    //4)Write a program to print the sum of even numbers between the given two numbers
+        var a = 10;
+        var i = 1;
+        sum = 0;
+        while(i<=a)
+            {
+                if(i%2==0)
+                {
+                    sum = sum +i;
+                }
+                i=i+1;
+            }
+            console.log(sum)
+
+    //5)Write a program to print the sum of odd numbers between the given two numbers
+        var a = 20;
+        var i = 1;
+        sum = 0;
+        while(i<=a)
+            {
+                if(i%2!==0)
+                {
+                    sum = sum +i;
+
+                }
+            i=i+1;
+            }
+        console.log(sum);
+
+    //6)Write a program to print the product of the numbers between 1 to 10 ( initialisation of product variable with 1 )
+            var a = 10;
+            var i = 1;
+            product = 1;
+            while(i<=a)
+                {
+                    product = product * i;
+                    i=i+1;
+                }
+                console.log(product);
+
+    //7)Write a program to find the product of all odd numbers between 1 and 10.
+        var a = 10;
+        var i = 1;
+        product = 1;
+        while(i<=a)
+                {
+                    if(i%2!==0)
+                    {
+                        sum = sum + i;
+                    }
+                i=i+1;
+                }
+        console.log(sum);
+
+    //8)Write a program to print the nth power of a given number. n can be any positive number. (n=3 r =4 then answer must be 3*3*3*3 )
+        var n = 3;
+        var r = 4;
+        var i = 1;
+        product = 1;
+        while(i<=r)
+                {
+                    product = product * n;
+                    i = i+1;
+                }
+            
+            console.log(product);
+
+    //9)Write a program to print factorial of a given number
+        var a = 8;
+        var i = 1;
+        var product = 1;
+        while(i<=a)
+                {   
+                    product = product *i;
+                    i=i+1;
+                }
+        console.log(product);
+
+    //10)Write a program to print the nCr of given ‘n’ and ‘r’
+            var n = +prompt();
+            var r = +prompt();
+            var c = n-r;
+            var i = 1;
+            var j = 1;
+            var k = 1;
+            var nfact = 1;
+            var rfact = 1;
+            var cfact = 1;
+            while(i<=n)
+                {
+                    nfact = nfact * i;
+                    i = i+1;
+                }
+            while(j<=r)
+                {
+                    rfact = rfact * j;
+                    j =j+1;
+                }
+            while(k<=c)
+                {
+                    cfact = cfact *k;
+                    k=k+1;
+                }
+            console.log(nfact/(rfact*cfact)); 
+
+        //11)Write a program to print the count of factors of a given number using for loop
+           /* var a = +prompt();
+            var i = 1;
+            count = 0;
+            while(i<=a)
+                {
+                   if(a%i==0)
+                   {
+                    count = count + 1;
+                   }
+                i=i+1;
+                }
+           console.log(count); */
+        
+        //12)Write a program to check a given number is a prime number or not
+          /*  var a = +prompt();
+            var i = 1;
+            var count = 0;
+            while(i<=a)
+                {
+                    if(a%i==0)
+                    {
+                        count = count +1;
+                    }
+                i=i+1;
+                }
+            if(count===2)
+            {
+                console.log("prime");
+            }
+            else
+            {
+                console.log("not prime");
+            }
+            */
+
+        //13)a program to read 5 numbers and print the sum of all entered numbers
+         /*   // var a = +prompt();
+            // var b = +prompt();
+            // var c = +prompt();
+            // var d = +prompt();
+            // var e = +prompt();
+            var result = 0;
+            var i = 0;
+            // result = (a+b+c+d+e)
+            // console.log(result);
+            while(i<5)
+            {
+                var num = +prompt();
+                result = result + num;
+                i= i+1;
+            }
+            console.log(result);
+         */ 
+        //14)a program to read 5 numbers and print product of n numbers
+        /*var i = 0;
+        var result = 1;
+        while(i<5)
+            {
+                var num = +prompt();
+                result = result * num;
+                i=i+1;
+            }
+        console.log(result);
+        */
+
+        //15)a program to read 5 numbers and print average of n numbers
+        /*var i = 0;
+        var result = 1;
+        while(i<5)
+            {
+                var num = +prompt();
+                result = result + num;
+                average = result / 5;
+                i=i+1;
+            }
+        console.log(average); */
+
+        //16)print Number of Digits in given number.
+           /* var i = 1;
+            var num = +prompt();
+            var rem = 0;
+            var c = 0;
+            while(num>0)
+                {
+                  rem = (num%10);
+                  c=c+1;
+                  num = parseInt(num/10);
+                }
+            console.log(c);
+            */
+
+        //19Write a program to count the number of ‘1’s in a given number.
+         
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     
+    // //1)wap to print addition of two numbers by using fucntions
+    //    function add(a,b)
+    //     {
+    //         r = a+b;
+    //         console.log(r);
+    //     }
+    //     add(44,89)
+    //     add(38,99)
+        
+    // //2)wap to print product of two numbers by using functions
+    //     function mul(a,b)
+    //     {
+    //         r = a*b;
+    //         console.log(r);
+    //     }
+    //     mul(7,9)
+    //     mul(5,8)
+
+    //3)wap to print factorial of given number by using functions
+        // function factorial(a)
+        // {
+            
+        //     var i =1;
+        //     var f = 1;
+        //     while(i<=a)
+        //     {
+        //         f=f*i;
+        //         i=i+1;
+        //     }
+        //     return f;
+        // }
+
+        // var fac = factorial(8);
+        // var fac2 = factorial(4)
+        // console.log(fac);   
+        // console.log(fac2);    
+    //4)wap to print factors of given number
+      /*  function factor(a)
+        {
+            var i = 1;
+            // var a ;
+            var f=0;
+            while(i<=a)
+                {
+                    if(a%i==0)
+                        {
+                            console.log(i);
+                            
+                        }
+                        i++; 
+                }
+        }
+        factor(20)
+        */
+    //5)wap to print reverse a number
+            // function reverse(a)
+            // {
+            //     var a;
+            //     var r=0;
+            //     var result =0;
+            //     while(a!==0)
+            //         {
+            //             r=a%10;
+            //             result = result * 10 + r;
+            //             a = parseInt(a/10);
+            //         }
+            //     return result;
+            // }
+            // var rev = reverse(1986)
+            // console.log(rev);
+
+    
+
+   // 6) wap to print reverse of array of numbers
+    var ar = [10,20,30,40,50,60]
+    for(i=ar.length-1;i>=0;i--)
+            {
+                console.log(ar[i]);
+            }
+
+
+    console.log("gap");
+   // wap to print reverse of array of numbers with functions
+    function arr(num)
+    {
+        var re ="";
+        for(i=num.length-1;i>=0;i--)
+        {
+            re = re + num[i];
+            // result = re + re;
+        }
+       console.log(re); 
+    //    console.log(result);
+    }
+    arr(['10','3','49','58','59'])
+
+
+
+    // function arrstr(ar)
+    // {   
+    //     var re ="";
+    //     for(i=ar.length-1;i>=0;i--)
+        
+    //     {
+    //         re = re+ar[i]
+    //     }
+    //     console.log(re);
+    // }
+    // arrstr('sairam')
+
+    //8)wap to print average of given parameters
+    // function ave(a,b,c)
+    // {
+        
+    //     for(var i =0;i<=1;i++)
+    //     {
+    //         sum= a+b+c;
+    //         total= sum/3
+    //     }
+    // console.log(total);
+    // }
+    // ave(40,50,60)
+
+    // wap by doing sum and mul then both result or equal or not
+   /* function mul(a,b) {
+        return a*b;
+
+    }
+    function add(a,b) {
+        return a+b;
+    }
+    var m = mul(5,2)
+    var s = add(5,5)
+    if(m===s)
+    {
+        console.log("true");
+    }
+    else
+    {
+        console.log("false");
+    } */
+    
+//**basic methods of funtions doing some operations
+    // //1)wap sum two numbers by using function
+    // function sum(x,y){
+    //     console.log(x+y);
+    // }
+    // sum(20,30)
+
+    
+    // //2)wap to mul two numbers with return result
+    // function mul(x,y){
+    //     return x*y;
+    // }
+    // var res = mul(5,5)
+    // console.log(res);
+
+    // //3)wap to sub two numbers with function expression / funtion literal
+    // var sub = function(i,j){
+    //     var temp ;
+    //     temp = i-j;
+    //     return temp
+    // }
+    // var res = sub(10,4)
+    // console.log(res); 
+   
+   /*function sum(x){
+    x()
+   }sum(function(){})
+   */
+
+   /*
+   function sum(x,a,b){
+    var result=a+b;
+    x(result)
+   }sum(function(res){console.log(res);},20,10)
+   */
+
+   /*
+   function mul(m,a,b){
+    var r = a*b;
+    m(r)
+   }mul(function(final){console.log(final);},10,100)
+   */
+
+   /*
+   function div(d,a,b){
+    var res = a/b;
+    d(res)
+   }div(function(output){console.log(output);},10,2)
+    */
+
+   /*
+    function sub(s,a,b){
+    var f = a-b;
+    s(f)
+   }sub(function(cat){console.log(cat);},10,3)
+    */
+
+//    function mod(m,a,b){
+//     var per =a%b;
+//     m(per)
+//    }mod(function(op){console.log(op);},72,7)
+
+   
+    // function add(a,b,res){
+    // var sum = a+b
+    // res(sum)
+    // }
+    // add(10,20,function(add)
+    // {
+    // console.log(add);
+    // })
+// y(10,20);
+// minus(19,5)
+//     var y=function(a,b){
+//         console.log(a+b)
+//     }
+//     function minus(c,d){
+//         console.log(c-d)
+//     }
+//     y(10,20);
+// minus(19,5)
+
+ 
+      function sum(add,a,b){
+            var yes = a+b;
+            add(yes)
+        }
+        sum(function(res){console.log(res);},20,5)
+        
+
+</script>
+</body>
+</html>

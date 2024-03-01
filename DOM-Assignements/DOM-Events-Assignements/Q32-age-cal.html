@@ -1,0 +1,97 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #md {
+            text-align: center;
+            margin-top: 200px;
+        }
+
+        body {
+            background-color: yellowgreen;
+           
+        }
+        span{
+            color: crimson;
+            font-size: 30px;
+        }
+        label{
+            color: blue;
+            font-size: 35px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="md">
+        <label for="">Date of Birth :</label>
+        <input type="date" onchange="getage(event)"><br><br>
+        <span id="age"></span>
+        <span id="months"></span>
+        <span id="hours"></span>
+        <span id="mini"></span>
+        <span id="some"></span>
+    </div>
+    <script>
+        var inp = document.getElementById('age')
+        var inpmon = document.getElementById('months')
+        var inphour = document.getElementById('hours')
+        var min = document.getElementById('mini')
+        var som = document.getElementById('some')
+        function getage(e) {
+            var dob = new Date(e.target.value)
+            var today = new Date()
+            var currentage = parseInt((today.getTime() - dob.getTime()) / (1000 * 60 * 60 * 24 * 365))
+            inp.innerHTML = 'Your Age is : ' +  currentage + 'Years.'
+
+            var br = document.createElement('br')
+            inp.appendChild(br)
+            var br = document.createElement('br')
+            inp.appendChild(br)
+            var dob = new Date(e.target.value)
+            var today = new Date()
+            var currentage =  parseInt((today.getTime() - dob.getTime()) / (1000 * 60 * 60 * 24))
+            inpmon.innerHTML ='Days is : ' + currentage + 'Days.'
+
+            var br = document.createElement('br')
+            inpmon.appendChild(br)
+            var br = document.createElement('br')
+            inpmon.appendChild(br)
+            var dob = new Date(e.target.value);
+            var today = new Date();
+            var currentage = parseInt((today.getTime() - dob.getTime()) / (1000 * 60 * 60)); // Using parseInt to convert to integer
+            inphour.innerHTML = 'Hours is: ' + currentage +"Hours." 
+
+
+            var br = document.createElement('br')
+            inphour.appendChild(br)
+            var br = document.createElement('br')
+            inphour.appendChild(br)
+            var dob = new Date(e.target.value)
+            var today = new Date()
+            var currentage =  parseInt((today.getTime() - dob.getTime()) / (1000 * 60))
+            min.innerHTML ='Minutes is : '+ currentage + 'Miniutes.'
+
+            // var br = document.createElement('br')
+            // min.appendChild(br)
+            // var dob = new Date(e.target.value)
+            // var today = new Date()
+            // var currentage ='some is :'+ ( today.getTime()-dob.getTime())/(1000*365) 
+            // som.innerHTML=( currentage)
+
+        }
+        getage()
+
+
+        var dob = new Date(e.target.value);
+        var today = new Date();
+        var currentage = parseInt((today.getTime() - dob.getTime()) / (1000 * 60 * 60)); // Using parseInt to convert to integer
+        inphour.innerHTML = 'Hours is: ' + currentage;
+
+    </script>
+</body>
+
+</html>

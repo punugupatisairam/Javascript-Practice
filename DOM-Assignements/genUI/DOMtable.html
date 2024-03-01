@@ -1,0 +1,93 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="p">Person:</label>
+    <input type="text" id="n"><br><br> 
+    <label for="">Age:</label>
+    <input type="text" id="a"><br><br>
+    <label for="">Gender:</label>
+    <input type="text" id="g"><br><br>
+    <button onclick="ap()">Add Person</button>
+    <br><br>
+    <table border="1" >
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+            </tr>
+        </thead>
+        <tbody id="tb">
+
+        </tbody>
+       
+    </table>
+    <script>
+        var pname = document.getElementById('n')
+        var page = document.getElementById('a') 
+        var pgen = document.getElementById('g') 
+        var table = document.getElementById('tb')
+        var info = []; 
+        function ap(){
+            table.innerHTML='';
+            var pobj = {
+                name1 : pname.value, 
+                age : page.value,
+                gender : pgen.value
+
+            
+            }
+            info.push(pobj)
+            info.forEach(function(per){
+                var trow = document.createElement('tr')
+                var td1 = document.createElement('td')
+                var td2 = document.createElement('td')
+                var td3 = document.createElement('td')
+
+                td1.innerHTML=per.name1;
+                td2.innerHTML=per.age;
+                td3.innerHTML=per.gender;
+                trow.appendChild(td1)
+                trow.appendChild(td2)
+                trow.appendChild(td3)
+                table.appendChild(trow)
+
+            })
+        }
+
+        // var pname = document.getElementById('p')
+        // var page = document.getElementById('a')
+        // var table = document.getElementById('tb')
+        // var people = [];
+
+        // function ap(){
+        // table.innerHTML='';
+        // var personobj={
+        //     personName:pname.value,
+        //     personAge:page.value
+        // }
+        // people.push(personobj);
+        
+        // genTable(people)
+        // }
+
+        // function genTable(arr){
+        //     arr.forEach(function(person){
+        //     var trow = document.createElement('tr')
+        //     var td1 = document.createElement('td')
+        //     var td2 = document.createElement('td')
+        //     td1.innerHTML = person.personName;
+        //     td2.innerHTML = person.personAge;
+        //     trow.appendChild(td1)
+        //     trow.appendChild(td2)
+        //     table.appendChild(trow)
+
+        // }) ;
+        // }
+    </script>
+</body>
+</html>

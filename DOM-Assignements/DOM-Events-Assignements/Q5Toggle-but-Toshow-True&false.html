@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;color: red;margin-top: 100px;">Toggle Button To show True / False</h1>
+    <button onclick="tog()" id="d1" style="margin-left: 650px; margin-top: 80px;">Toggle</button>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span id="tr"></span>
+    <script>
+
+        var y = document.getElementById('tr')
+        y.innerHTML='false'
+        function tog() {
+            if(y.innerHTML=='false')
+            {
+                y.innerHTML='true'
+            }
+            else
+            {
+                y.innerHTML='false'
+            }
+        }
+
+        
+        // var y = document.getElementById('tr')
+        // y.innerHTML='false'
+        // function tog() {
+        //    var k = !(y.innerHTML)
+        //    y.innerHTML=k 
+        // }
+    </script>
+</body>
+</html>

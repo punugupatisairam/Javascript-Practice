@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1)wap to calculate the bill of purchase 
+        var items = {
+            Shirt : 500,
+            trouser : 500,
+            short : 400
+        }
+        var bill ={
+            short : 4,
+            trouser :2,
+            Shirt : 4 
+        }
+        var total =0;
+        for(var shop in bill)
+        {
+            total = total+bill[shop]*items[shop];
+        }
+        console.log(total);
+    </script>
+</body>
+</html>

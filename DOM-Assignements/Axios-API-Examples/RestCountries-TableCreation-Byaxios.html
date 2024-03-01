@@ -1,0 +1,133 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        #inp{
+            margin-left: 587px;
+            margin-top: 100px;
+            /* width: fit-content; */
+        }
+        button{
+            margin-left: 150px;
+            /* padding-left: 40px; */
+            margin-top: 100px;
+        }
+        table{
+            margin-left: 150px;
+            border-collapse: collapse;
+            /* margin-top: 100px; */
+        }   
+    </style>
+</head>
+
+
+<body>
+    <button onclick="Asc()">AtoZ</button>
+    <button onclick="Des()">ZtoA</button>
+    <input id="inp" onkeyup="filtered()" type="search" placeholder="Search"></input>
+    
+    <table border="1px">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>capital</th>
+                <th>population</th>
+                <th>region</th>
+                <th>flags</th>
+            </tr>
+        </thead>
+        <tbody id="mb">
+
+        </tbody>
+    </table>
+    <script>
+        var inpu = document.getElementById('inp')
+        var tbd = document.getElementById('mb')
+        var countries = []
+        axios.get("https://restcountries.com/v3.1/all").then(function (res) {
+
+            // return res.json()
+            countries = res.data
+            // console.log(res);
+            // console.log(contries[0]);
+            gentable(countries)
+
+        })
+
+        function filtered(){
+            debugger
+            var filteredres=countries.filter(function(each){
+                return each.name.common.toUpperCase().startsWith(inpu.value.toUpperCase())
+                 
+            })
+            gentable(filteredres)
+
+        }
+        
+
+        function gentable(arr) {
+            tbd.innerHTML=""
+            arr.forEach(function (d) {
+                ntr = document.createElement('tr')
+                td1 = document.createElement('td')
+                td2 = document.createElement('td')
+
+                td4 = document.createElement('td')
+                td5 = document.createElement('td')
+                td3 = document.createElement('img')
+                td1.innerHTML = d.name.common
+                td2.innerHTML = d.capital
+                td4.innerHTML = d.population
+                td5.innerHTML = d.region
+                td3.src = d.flags.png
+
+                ntr.appendChild(td1)
+                ntr.appendChild(td2)
+                ntr.appendChild(td4)
+                ntr.appendChild(td5)
+                ntr.appendChild(td3)
+                tbd.appendChild(ntr)
+            })
+        }
+        function Asc() {
+           
+            debugger
+           countries.sort(function (a, b) {
+            
+               // console.log(a.name.common)
+               var fn1 = a.name.common.toLowerCase()
+               var fn2 = b.name.common.toLowerCase()
+               if (fn1 > fn2) {
+                   return 1
+               }
+               else {
+                   return -1
+               }
+           })
+           console.log(countries[1])
+           gentable(countries)
+       }
+        function Des() {
+debugger
+            countries.sort(function (a, b) {
+                
+                var fn1 = a.name.common.toLowerCase()
+                var fn2 = b.name.common.toLowerCase()
+                if (fn1 < fn2) {
+                    return 1
+                }
+                else {
+                    return -1
+                }
+            })
+            gentable(countries)
+
+        }
+    </script>
+</body>
+
+</html>

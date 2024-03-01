@@ -1,0 +1,124 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="p">Person:</label>
+    <input type="text" id="n"><br><br>
+    <label for="">Age:</label>
+    <input type="text" id="a"><br><br>
+    <label for="">Gender:</label>
+    <input type="text" id="g"><br><br>
+
+    <button onclick="ap()" id="addp">Add Person</button>
+    <button onclick="update()" id="updp">Update Person</button>
+    <br><br>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Modifications</th>
+            </tr>
+        </thead>
+        <tbody id="tb">
+
+        </tbody>
+
+    </table>
+    <script>
+        var currentindex;
+        var pname = document.getElementById('n')
+        var page = document.getElementById('a')
+        var pgen = document.getElementById('g')
+        var table = document.getElementById('tb')
+        var addper = document.getElementById('addp')
+        var updpe = document.getElementById('updp')
+        updpe.style.display = 'none'
+        var info = [];
+        function ap() {
+            // updpe.style.display='none'
+
+            table.innerHTML = '';
+            var pobj = {
+                name1: pname.value,
+                age: page.value,
+                gender: pgen.value
+            }
+            info.push(pobj)
+            console.log(info);
+            genCrud(info)
+
+        }
+        function genCrud(arr) {
+            table.innerHTML = ""
+            arr.forEach(function (per, ind) {
+                var trow = document.createElement('tr')
+
+                var td1 = document.createElement('td')
+                var td2 = document.createElement('td')
+                var td3 = document.createElement('td')
+
+                var editBtn = document.createElement('button')
+                editBtn.innerHTML = 'Edit'
+
+                var delBtn = document.createElement('button')
+                delBtn.innerHTML = 'Delete'
+                var upBtn = document.getElementById('upbut')
+
+                delBtn.onclick = function () {
+                    info.splice(ind, 1)
+                    genCrud(info)
+
+
+                }
+                editBtn.onclick = function edit() {
+                    pname.value = per.name1
+                    page.value = per.age
+                    pgen.value = per.gender
+                    currentindex = ind
+                    updpe.style.display = 'inline-block'
+                    addper.style.display = 'none'
+                }
+
+
+                td1.innerHTML = per.name1;
+                td2.innerHTML = per.age;
+                td3.innerHTML = per.gender;
+
+
+                trow.appendChild(td1)
+                trow.appendChild(td2)
+                trow.appendChild(td3)
+
+                trow.appendChild(editBtn)
+                trow.appendChild(delBtn)
+                table.appendChild(trow)
+                pname.value = ''
+                page.value = ''
+                pgen.value = ''
+
+            })
+
+        }
+
+        function update() {
+            var obj2 = {
+                name1: pname.value,
+                age: page.value,
+                gender: pgen.value
+            }
+            info[currentindex] = obj2
+            console.log(info);
+            genCrud(info)
+            addper.style.display = 'inline-block'
+            updpe.style.display = 'none'
+        }
+    </script>
+</body>

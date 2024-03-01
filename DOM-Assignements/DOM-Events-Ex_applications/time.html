@@ -1,0 +1,83 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: aqua;
+            color:red;
+            font-size: 50px;
+        }
+        button{
+            background-color: lemonchiffon;
+            color: blue;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div id="bmd"></div>
+    <script>
+        var bd = document.getElementById('bmd')
+        var dateis = document.createElement('span')
+        var stopbut = document.createElement('button')
+        stopbut.innerHTML = 'stop'
+        bd.style.textAlign = 'center'
+        bd.style.marginTop = '200px'
+        stopbut.style.marginTop = '30px'
+        dateis.style.fontSize = '30px'
+        stopbut.style.display = 'inline-block'
+        var br = document.createElement('br')
+        bd.appendChild(dateis)
+        bd.appendChild(br)
+        bd.appendChild(stopbut)
+        var time;
+        function start() {
+            time = setInterval(() => {
+
+                var today = new Date()
+                var currentdt = 'Today Date :' + today.getDate() + '/' + today.getMonth() + '/' + today.getFullYear() + ', Time is : ' + today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds()
+                dateis.innerHTML = currentdt
+
+
+            }, 10);
+        }
+
+        start()
+        stopbut.onclick = ()=>{
+            // console.log('ss');
+            if (stopbut.innerHTML === "stop") {
+
+                clearInterval(time)
+                stopbut.innerHTML = 'start'
+            }
+            else {
+
+                start()
+                stopbut.innerHTML = 'stop'
+            }
+        }
+
+        var s = new Date(   )
+        console.log(s);
+
+       { 
+    // var b = 20
+     function abc(){
+        var a =100;
+        console.dir(a);
+        // console.log(a);
+        // console.dir(b);
+     }  
+     abc() 
+    //  console.dir(b);
+    }
+        
+
+
+    </script>
+</body>
+
+</html>

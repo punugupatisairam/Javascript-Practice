@@ -1,0 +1,35 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //2)Write a function which can return the greatest of the three numbers passed in arguments.
+
+        function compare(a, b, c) {
+            var i = 0;
+            if (a > b && a > c) {
+                if (b > c) {
+                    console.log(a);
+                }
+
+            }
+            else if (b > a && b > c) {
+                if (a > c) {
+                    console.log(b);
+                }
+                else {
+                    console.log(c);
+
+                }
+            }
+        }
+        var greatest = compare(45, 67, 23);
+    </script>
+</body>
+
+</html>

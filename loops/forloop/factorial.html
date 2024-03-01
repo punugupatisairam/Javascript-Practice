@@ -1,0 +1,165 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1)wap to print factorial of given number
+        //     var n = 5;
+        //     // var i = 1;
+        //     var f = 1;
+        //     for(var i=1;i<=n;i++)
+        //     {
+        //         f=f*i;
+        //     } 
+        // console.log(f);
+
+
+        var a = 7;
+        var i = 1;
+        var f = 1;
+        while (i < a) {
+            f = f * i
+            i++
+        }
+
+        console.log(f);
+
+        /* var a = 5;
+         var i = 1;
+         var f = 1;
+         while(i<=a)
+             {
+                 f=f*i;
+                 i=i+1;
+             }
+         console.log(f); */
+
+        //2)Write a program to print first ten multiples of 4 using a while loop (multiples of 4 are 4,8,12,16,20,.....)
+        var n = 10;
+        var i = 1;
+        var m = 4;
+        var r = 0;
+        for (; i <= 10; i++) {
+            r = m * i;
+            console.log(r);
+
+
+        }
+
+        //3)Write a program to print multiplication table of 6 using while loop
+        var n = 6;
+        var r = 0;
+        for (i = 1; i <= 10; i++) {
+            r = 6 * i;
+            console.log(r);
+        }
+
+        //4)Print the squares of all numbers from 1 to 10.
+        var a = 10;
+        var s = 1;
+        var r;
+        for (var i = 1; i <= a; i++) {
+            r = i * i;
+            console.log(r);
+
+        }
+
+        //5)Print the cubes of all numbers from 1 to 10.
+        var a = 10;
+        var s = 1;
+        var r;
+        for (i = 1; i <= a; i++) {
+            r = i ** i;
+            console.log(r);
+        }
+
+        //6)Write a program to print factors of 24 using while loop (factors of 24 are 1,2,3,4,6,8,12,24)
+        var a = 24;
+        for (i = 1; i <= a; i++) {
+            if (a % i == 0) {
+                console.log(i);
+            }
+        }
+
+        // var a =7;
+        // var i =1;
+        // var c =0;
+        // while(i<=a)
+        //     {
+        //         if(a%i===0)
+        //             {
+        //                 c=c+1;                            
+        //             }
+        //         i=i+1;  
+        //     }
+        // console.log(c);
+
+
+        //how many factors does that given number has
+        // var n = 9;
+        // var c =0;
+        // for(var i =1;i<=n;i++)
+        // {
+        //     if(n%i==0){
+        //         c = c+1
+        //     }
+        // }
+        // console.log(c);
+
+        // var a = 9 ;
+        // var i =1
+        // var c = 0;
+        // while(i<=a){
+        //     if(a%i==0){
+        //         c=c+1
+
+        //     }
+        //     i++
+        // }
+
+        // console.log(c);
+
+        var n = 100;
+        var i = 1;
+    
+
+        if (n % 2 == 0) {
+            // console.log(i);
+            console.log("even");
+        }
+        else {
+            console.log("not even");
+        }
+
+        var a = 29;
+        for (var i = 0;i<1;i++){
+            if (a%2==0) {
+                console.log('even');
+            }
+            else
+            {
+                console.log("odd");
+            }
+        }
+
+
+
+
+        var n = 50
+        for (var i = 0; i < n; i++) {
+            if (i % 2 !== 0) {
+                console.log(i);
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

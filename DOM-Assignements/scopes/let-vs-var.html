@@ -1,0 +1,85 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="s1"></div>
+    <script>
+        //in forloop using var variable function scope binding 
+        var ar = ['a', 'b', 'c', 'd', 'e']
+        for (var i = 0; i <= ar.length - 1; i++) {
+            var mdiv = document.getElementById('s1')
+            var newbt = document.createElement('button')
+            newbt.onclick = function () {
+                alert(ar[i])
+            }
+            newbt.innerHTML = ar[i]
+            mdiv.appendChild(newbt)
+
+        }
+
+        br1 = document.createElement('br')
+        mdiv.appendChild(br1)
+        br1 = document.createElement('br')
+        mdiv.appendChild(br1)
+        var ar = ['a', 'b', 'c', 'd', 'e']
+        for (let i = 0; i <= ar.length - 1; i++) {
+            var mdiv = document.getElementById('s1')
+            var newbt = document.createElement('button')
+            newbt.onclick = function () {
+                alert(ar[i])
+            }
+            newbt.innerHTML = ar[i]
+            mdiv.appendChild(newbt)
+
+        }
+
+        //SEAL AND FREEZE METHODS ON OBJECTS 
+        var obj = {
+            name: 'sai',
+            age: 22,
+            address: {
+                street: 'L.D.pally',
+                city:`ktdm`,
+                H_No : {
+                    houseno : 10
+                }
+                
+            }
+        }
+        //BY USING SEAL WE CAN CHNAGE OBJECT PROPERTOES
+
+        Object.seal(obj);
+        obj.name = 'sudhakar'
+        obj.age = '22'
+        obj.city = 'ktdm'
+        obj,role='se';
+        // console.log(obj.name);
+        console.log(obj);
+
+        //BY USING FREEZE METHOD WE CAN NOT CHANGE OBJECT PROPERTIES AND WE CAN'T ADD
+        Object.freeze(obj);
+        obj.address.city = 'kothagudem'
+        // console.log(obj.name);
+
+
+        for (let j = 1; j <= 3; j++) {
+            setTimeout(() => {
+                console.log(j);
+            },1000)
+        }     
+         // console.log(i);
+
+        // var i =1;
+        // setTimeout(() => {
+        //     console.log(i);
+        // }, 1000)
+
+    </script>
+</body>
+
+</html>

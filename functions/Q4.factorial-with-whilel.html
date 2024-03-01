@@ -1,0 +1,27 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //4)Write a function which can return the factorial of a number.
+
+        function fact(a) {
+            var res = 1;
+            var i = 1;
+            while (i <= a) {
+                res = res * i;
+                i++;
+            }
+            return res;
+        }
+        var factorial = fact(4);
+        console.log(factorial);
+    </script>
+</body>
+
+</html>

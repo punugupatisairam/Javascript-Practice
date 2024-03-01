@@ -1,0 +1,118 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        td,
+        th {
+            border: 3px solid;
+            border-collapse: collapse;
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Place</th>
+            <th>Gender</th>
+        </thead>
+        <tbody id="mb">
+
+        </tbody>
+        
+    <form onsudmit="event.preventDefault()" >
+        <label for="">Name: </label>
+        <input type="text" placeholder="enter name"  id="name"><br>
+        <label for="">Place: </label>
+        <input type="text" placeholder="enter place" id="place"><br>
+        <label for="">Gender: </label>
+        <input type="text" placeholder="enter gender" id="gender" ><br>
+        <button onclick="addemloyee()">add employee</button>
+    </form>
+    <br><br><br><br>
+
+        <div id="ae"></div>
+
+    </table>
+    <script>
+
+        var employees = [
+            {
+                fullname: 'sairam',
+                place: 'sr nagar',
+                gender: 'male'
+            },
+            {
+                fullname: 'sudhakar',
+                place: 'jntuh',
+                gender: 'male'
+            },
+            {
+                fullname: 'karim',
+                place: 'palakollu',
+                gender: 'male'
+            },
+            {
+                fullname: 'sandeep',
+                place: 'vizag',
+                gender: 'male'
+            }
+        ]
+        
+        genTable()
+
+        function addemloyee(){
+            newemp={
+                fullname:document.getElementById('name').value,
+                place:document.getElementById('place').value,
+                gender:document.getElementById('gender').value
+            }
+           employees.push(newemp) 
+        //    console.log(employees);
+           genTable();
+        }
+
+        function genTable(){
+        document.getElementById('ae').innerHTML='' 
+        for (var i = 0; i <= employees.length - 1; i++) {
+            var newtr = document.createElement('tr')
+            var fullnametd = document.createElement('td')
+            fullnametd.innerHTML = employees[i].fullname
+            newtr.appendChild(fullnametd)
+
+            var placetd = document.createElement('td')
+            placetd.innerHTML = employees[i].place
+            newtr.appendChild(placetd)
+
+            var gendertd = document.createElement('td')
+            gendertd.innerHTML = employees[i].gender
+            newtr.appendChild(gendertd)
+            var res = document.getElementById('mb')
+            res.appendChild(newtr)
+        
+        }
+    }
+
+        
+
+
+
+
+        // var students = ['sai', 'ram', 'sudhakr', 'prince', 'paul']
+        // for (var i = 0; i <= students.length - 1; i++) {
+        //     var newli = document.createElement('li')
+        //     newli.innerText = students[i]
+        //     document.getElementById('ae').appendChild(newli)
+
+        // }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="studentForm" onsubmit="addStudent(event)" >
+        <label for="">Name :</label>
+        <input name="fullname" type="text" id="name" placeholder="enter your name">
+        <br><br>
+        <label for="">Age :</label>
+        <input name="age" type="text" id="age" placeholder="enter your age">
+        <br><br>
+        <label for="">city</label>
+        <input name="city" type="text" id="city" placeholder="enter your city">
+        <br><br>
+        Gender:
+        <input type="radio" name="gender" value="female">:Female
+        <input type="radio" name="gender" value="male">:Male
+        <input type="radio" name="gender" value="oth">:others
+        <br><br>
+        know tech: <br>
+        <input type="checkbox" name="techs" value="Nodejs">:Nodejs
+        <input type="checkbox" name="techs" value="Reactjs">Reactjs                                                                   
+        <input type="checkbox" name="techs" value="Angular">Angular
+        <input type="checkbox" name="techs" value="Angularjs">Angularjs
+        <input type="checkbox" name="techs" value="Expressjs">Expressjs
+        <input type="checkbox" name="techs" value="java">java
+        <input type="checkbox" name="techs" value="springboot">springboot
+        <br>
+        <button >add student</button>
+    </form>
+    <table border="1">
+        <thead>
+            <tr> 
+                <th>Fullname</th>
+                <th>Age</th>
+                <th>City</th>
+                <th>Gender</th>
+                <th>Technologies</th>
+            </tr>
+        </thead>
+        <tbody id="tb">
+
+        </tbody>
+    </table>
+    <script>
+        var students = [];
+        function addStudent(e){
+            e.preventDefault();
+            var ob1 = {
+                fullname : "",
+                age : "",
+                city:'',
+                gender:'',
+                technologies:[]
+            }
+            ob1.fullname=document.studentForm.fullname.value;
+            ob1.age=document.studentForm.age.value;
+            ob1.city=document.studentForm.city.value;
+            ob1.gender=document.studentForm.gender.value;
+            document.studentForm.techs.forEach(function(a,b){
+                if(a.checked===true){
+                    ob1.technologies.push(a.value)
+                }
+            });
+            students.push(ob1)
+            genUI()
+            document.studentForm.reset()
+
+        }
+        function genUI(){
+            document.getElementById('tb').innerHTML=""
+            students.forEach(function(student,b){
+                var newtr = document.createElement('tr')
+                for(var k in student){
+                    var ntd =document.createElement('td')
+                    ntd.innerHTML=student[k]
+                    newtr.appendChild(ntd)
+                }
+                document.getElementById('tb').appendChild(newtr)
+            }) 
+                
+          
+
+        }
+        genUI();
+
+    </script>
+</body>
+</html>

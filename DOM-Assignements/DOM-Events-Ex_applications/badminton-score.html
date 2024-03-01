@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVaNRr6cUxMkXHgN6I3hRkJi0PHfAj-eeYPA&usqp=CAU');
+            background-repeat: no-repeat;
+            background-size: 100%;
+            
+        }
+        #md{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            /* border: 2px solid; */
+        }
+        h1{
+            text-align: center;
+            margin-top: 100px;
+            color:crimson;
+            font-size: 70px;
+        }
+        p{
+            font-size: 40px;
+            color:gold;
+            font-family:cursive
+        }
+        button{
+            font-size: 40px;
+            color: red;
+        }
+       .cl{
+        /* text-align: center; */
+        color: red;
+        margin-left: 600px;
+       }
+        
+    </style>
+</head>
+<body>
+    <h1>Badminton Match</h1>
+    <br><br><br><br>
+
+    <div id="md">
+        <div>
+        <p><b>MUMBAI:</b><span id="b1"></span> <span id="ser"></span></p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button onclick="inc()">Score</button>
+    </div>
+    <div>
+        <p><b>HYDERABAD:</b><span id="b2"></span> <span id="service"></span></p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button onclick="incr()">Score</button>
+    </div>
+    </div>
+    <br><br><br>
+    <button class="cl" onclick="cl()" >clear</button>
+
+    <script>
+        var c = 0
+        var s = 0
+        document.getElementById('b1').innerHTML=c;
+        document.getElementById('b2').innerHTML=c;
+        
+        function inc(){
+            c++
+            document.getElementById('b1').innerHTML=c
+            document.getElementById('ser').innerHTML='&#127992';
+            document.getElementById('service').innerHTML=''
+        }
+        function incr(){
+            s++
+            document.getElementById('b2').innerHTML=s
+            document.getElementById('service').innerHTML='&#127992';
+            document.getElementById('ser').innerHTML=''
+        }
+        function cl(){
+            c=0;
+            s=0;
+            document.getElementById('b1').innerHTML=''
+            document.getElementById('b2').innerHTML=''   
+            document.getElementById('ser').innerHTML=''   
+            document.getElementById('service').innerHTML=''   
+        }
+        
+    </script>
+</body>
+</html>

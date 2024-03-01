@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*
+    2)Given an object:
+    var person = {
+                     "firstName" : "Harry",
+                     "lastName" : "Potter",
+                     "age": 30,
+                     "gender": "male",
+                     "skill" : "ReactJS",
+                     "expertise": "Beginner"
+                            };
+                        
+        a)Print the firstname.
+        b)Print the lastname.
+        c)Print the fullname("Harry Potter").
+        d)If the age is less than 18, then print "false". If the age is more than 18, then print "true"
+    */
+                            
+    var person = {
+                     firstName : "Harry",
+                     lastName : "Potter",
+                     age: 30,
+                     gender: "male",
+                     skill : "ReactJS",
+                     expertise: "Beginner"
+                 }; 
+        console.log(person['firstName']);
+
+        console.log(person['lastName']);
+
+        var fullname = person.firstName+person.lastName;
+        console.log(fullname);
+        
+        var y = 'age';
+        if(person[y]>18)
+        {
+            console.log('true')
+        }
+        else
+        {
+            console.log('false');
+        }
+    </script>
+</body>
+</html>

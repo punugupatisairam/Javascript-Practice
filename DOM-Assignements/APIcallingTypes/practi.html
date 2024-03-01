@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+<body>
+    <script>
+        var res = []
+        axios.get('https://bible-api.com/BOOK+CHAPTER:VERSE').then(function(e){
+
+                // res=e
+                // console.log(res);
+                console.log(e);
+        })
+
+    </script>
+</body>
+</html>

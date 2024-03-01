@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cc{
+            border: 2px solid;
+            width: 100px;
+            height: 100px;
+        }
+        #md{
+            margin-top: 200px;
+            margin-left: 600px;
+        
+        }
+        
+    </style>
+</head> 
+<body>
+    <div id="md">
+    <div id="cc">
+    </div><br>&nbsp;&nbsp;&nbsp;
+    <button onclick="yellow()" id="b1">on</button>
+    <button onclick="white()" id="b2">off</button>
+    </div>
+    <script>
+        var x = document.getElementById('cc')
+        var y = document.getElementById('b1')
+        y.style.backgroundColor='orange'
+        var z = document.getElementById('b2')
+        z.style.backgroundColor='orange'
+        function yellow(){
+            x.style.backgroundColor="yellow"
+            y.style.backgroundColor='red'
+            z.style.backgroundColor='white'
+        }
+        function white(){
+            x.style.backgroundColor='white'
+            z.style.backgroundColor="red"
+            y.style.backgroundColor="white"
+        }
+    
+    </script>
+</body>
+</html>

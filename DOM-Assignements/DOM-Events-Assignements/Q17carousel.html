@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    
+    <button onclick="previous()">Previous</button>
+    <img src="" id="mimg">
+    <button onclick="next()">Next</button>
+    <script>
+        var i =0;
+        var img1 = document.getElementById('mimg')
+        ar = ['https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsX29mZmljZV8yX3Bob3RvX29mX2FfbGlvbl9pc29sYXRlZF9vbl9jb2xvcl9iYWNrZ3JvdW5kXzJhNzgwMjM1LWRlYTgtNDMyOS04OWVjLTY3ZWMwNjcxZDhiMV8xLmpwZw.jpg','https://img.freepik.com/free-photo/view-wild-lion-nature_23-2150460862.jpg','https://img.freepik.com/free-photo/view-wild-lion-nature_23-2150460851.jpg','https://i.pinimg.com/736x/b9/f3/94/b9f39428c0819c650107b400da18ad3f.jpg']
+        var fimg = img1.src=ar[i];
+        function previous(){
+            if(i==0){
+                i=ar.length-1;
+                img1.src=ar[i]
+                
+            }
+            else
+            {
+                i--;
+                img1.src=ar[i]
+        
+            }
+        }
+
+            function next(){
+            if(i==ar.length-1){
+                i=0;
+                img1.src=ar[i]
+                
+            }
+            else
+            {
+                i++;
+                img1.src=ar[i]
+        
+            }
+        }
+
+    </script>
+</body>
+</html>

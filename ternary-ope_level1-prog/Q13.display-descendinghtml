@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    //Write a program to print the given two numbers in descending order
+
+
+    var a = +prompt();
+    var b = +prompt();
+    (a>b)?console.log(a,b):console.log(b,a)
+   // a>b && b>c?console.log(a,b,c):b>a && a>c?console.log(b,a,c):console.log(c,a,b);
+
+   </script> 
+</body>
+</html>

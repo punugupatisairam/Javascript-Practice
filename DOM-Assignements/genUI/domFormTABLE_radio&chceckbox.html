@@ -1,0 +1,113 @@
+ <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="userform" onsubmit="event.preventDefault()">
+        <div>
+            <label for="">Firstname :</label>
+            <input type="text" name="firstname">
+        </div><br>
+        <div>
+            <label for="">Lastname :</label>
+            <input type="text" name="lastname">
+        </div><br>
+        <div>
+            <label for="">Gender :</label>
+            <input type="radio" name="gender" value="male"><label for="">Male</label>
+            <input type="radio" name="gender" value="female"><label for="">Female</label>
+            <input type="radio" name="gender" value="others"><label for="">Others.</label>
+        </div><br>
+        <div>
+            <label for="">Technologies :</label>
+            <input type="checkbox" name="Technologies" value="Frontend">Frontend
+            <input type="checkbox" name="Technologies" value="Backend">Backend
+            <input type="checkbox" name="Technologies" value="MERN fullsatk">MERN fullsatk
+            <input type="checkbox" name="Technologies" value="MEAN fullstack">MEAN fullstack
+            <input type="checkbox" name="Technologies" value="JAVA fullstack">JAVA fullstack
+        </div><br>
+        <div>
+            <label for="">Nationality : </label>
+            <select name="nationality" id="">
+                <option value="disabled selected">Please Select </option>
+                <option value="India">India</option>
+                <option value="NRI">NRI</option>
+                <option value="Nepal">Nepal</option>
+                
+            </select>
+            
+        </div><br>
+
+        <button onclick="add()">Sudmit</button>
+    </form>
+    <br>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Gender</th>
+                <th>Technologies</th>
+                <th>Country</th>
+            </tr>
+        </thead>
+        <tbody id="tb">
+
+        </tbody>
+    </table>
+    <script>
+        var tbody = document.getElementById('tb')
+        var users = [];
+        function add(){
+
+            var tech = [];
+            for(var i=0;i<=userform.Technologies.length-1;i++){
+                // console.log(userform.Technologies[i].value);
+                if(userform.Technologies[i].checked==true)
+                {
+                    tech.push(userform.Technologies[i].value);
+                }
+            }
+
+            var objs = {
+                firstname :userform.firstname.value,
+                lastname : userform.lastname.value,
+                gender : userform.gender.value,
+                techs : tech,
+                select:userform.nationality.value,
+                
+            }
+            
+          
+            users.push(objs)
+            gentable(users)
+        }
+        function gentable(arr){
+            tbody.innerHTML=''
+            arr.forEach(function(det){
+                var newtr = document.createElement('tr')
+                var td1 = document.createElement('td')
+                var td2 = document.createElement('td')
+                var td3 = document.createElement('td')
+                var td4 = document.createElement('td')
+                var td5 = document.createElement('td')
+                td1.innerHTML=det.firstname
+                td2.innerHTML=det.lastname
+                td3.innerHTML=det.gender
+                td4.innerHTML=det.techs 
+                td5.innerHTML=det.select
+                newtr.appendChild(td1)
+                newtr.appendChild(td2)
+                newtr.appendChild(td3)
+                newtr.appendChild(td4)
+                newtr.appendChild(td5)
+                tbody.appendChild(newtr)
+
+            })
+            
+        }
+    </script>
+</body>
+</html>

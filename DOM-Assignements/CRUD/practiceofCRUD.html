@@ -1,0 +1,130 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <label for="">Name :</label> <input type="text" id="pname"><br><br>
+        <label for="">Age :</label> <input type="text" id="page"><br><br>
+        <label for="">Gender :</label> <input type="text" id="pgender"><br><br>
+        <label for="">City :</label> <input type="text" id="pcity"><br><br>
+        <button onclick="addper()" id="adbtn"> add person </button>
+        <button onclick="updper()" id="upbtn">update</button>
+        <br><br>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>City</th>
+                    <th>Modifications</th>
+                </tr>
+            </thead>
+            <tbody id="tb">
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var currentindex;
+        var personsdata = [];
+        var tbd = document.getElementById('tb')
+        var pname = document.getElementById('pname')
+        var page = document.getElementById('page')
+        var pgender = document.getElementById('pgender')
+        var pcity = document.getElementById('pcity')
+        var upbtn = document.getElementById('upbtn')
+        var adperson = document.getElementById('adbtn')
+        upbtn.style.display = 'none'
+        function addper() {
+            var obj1 = {
+
+                pername: pname.value,
+                perage: page.value,
+                pergen: pgender.value,
+                percity: pcity.value
+            }
+            personsdata.push(obj1)
+            // console.log(personsdata);
+            gentable(personsdata)
+        }
+
+        function gentable(arr) {
+            tbd.innerHTML = ''
+            arr.forEach(function (ele, ind) {
+                var trow = document.createElement('tr')
+
+                var td1 = document.createElement('td')
+                td1.innerHTML = ele.pername
+                trow.appendChild(td1)
+
+                var td2 = document.createElement('td')
+                td2.innerHTML = ele.perage
+                trow.appendChild(td2)
+
+                var td3 = document.createElement('td')
+                td3.innerHTML = ele.pergen
+                trow.appendChild(td3)
+
+                var td4 = document.createElement('td')
+                td4.innerHTML = ele.percity
+                trow.appendChild(td4)
+
+                var delBtn = document.createElement('button')
+                var editBtn = document.createElement('button')
+                delBtn.innerHTML = 'Delete'
+                editBtn.innerHTML = 'Edit'
+                trow.appendChild(delBtn)
+                trow.appendChild(editBtn)
+
+                //delete funtionalti
+                delBtn.onclick = function () {
+                    personsdata.splice(ind, 1)
+                    gentable(personsdata)
+                    //    console.log(personsdata); // here iam checking the whether data deleted  or not
+                }
+
+                //edit functionality
+                editBtn.onclick = function () {
+                    pname.value = ele.pername
+                    page.value = ele.perage
+                    pgender.value = ele.pergen
+                    pcity.value = ele.percity
+                    currentindex = ind
+                    console.log(personsdata);
+                    upbtn.style.display = 'inline-block'
+                    adperson.style.display = 'none'
+
+                    // gentable(personsdata)
+                }
+                tbd.appendChild(trow)
+
+            })
+
+        }
+        function updper() {
+            obj2 = {
+
+                pername: pname.value,
+                perage: page.value,
+                pergen: pgender.value,
+                percity: pcity.value
+
+            }
+            personsdata[currentindex] = obj2
+            gentable(personsdata)
+
+            upbtn.style.display = 'none'
+            adperson.style.display = 'inline-block'
+        }
+
+
+    </script>
+</body>
+
+</html>

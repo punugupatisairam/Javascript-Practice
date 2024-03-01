@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* li{
+        list-style-type: none;
+    } */
+    body{
+        background-color: lemonchiffon;
+    }
+    h1{
+        color: red;
+        text-align: center;
+        margin-top: 100px;
+        font-size: 70px;
+    }
+    #md{
+        margin-left: 500px;
+        margin-top: 80px;
+    
+    }
+    #inp{
+        font-size: 20px;
+    }
+    button{
+        font-size: 20px;
+    }
+
+</style>
+<body>
+    <h1>Add students</h1>
+    <div id="md">
+    <input type="text" id="inp">
+    <button onclick="add()">Add Student</button> 
+    <ul id="ml">
+
+    </ul>
+    </div>
+    <script>
+        var inpu = document.getElementById('inp')
+        var list = document.getElementById('ml')
+        var data = [];
+        // data.push(inpu)
+        function add(){
+            list.innerHTML=''
+            data.push(inpu.value)
+            data.forEach(function(newdata){
+            var li = document.createElement('li')
+            li.innerHTML=newdata
+            list.appendChild(li)
+            inpu.value=''  
+    })
+}
+   </script>
+</body>
+</html>

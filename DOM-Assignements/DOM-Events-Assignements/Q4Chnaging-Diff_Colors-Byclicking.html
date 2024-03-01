@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #d1{
+            width: 80px;
+            height: 80px;
+            border: 2px solid;
+        }
+    </style>
+</head>
+<body>
+    <div onclick="avunu()" id="d1"></div>
+    <script>
+//         var i=0;
+        
+//         var x = document.getElementById('d1')
+//         var y =x.style.backgroundColor=ar[0]
+//         var ar = ["red","blue","green","orange"]
+//         function avunu(){
+//         if(i==4){
+//             i=0
+//         }
+//         x.style.backgroundColor=ar[i]
+//         i++
+// }
+     
+    var i=0
+    var x = document.getElementById('d1')
+    var ar = ["red","blue","green","orange"]
+    var y = x.style.backgroundColor=ar[i]
+    function avunu(){
+    if(i==ar.length-1){
+        i=0
+        x.style.backgroundColor=ar[i]
+    }
+    else
+    {
+    i++
+    x.style.backgroundColor=ar[i]
+    
+}
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #be{
+            border: 2px solid;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 500px;
+            margin-top: 150px;
+        }
+        button{
+            margin-left: 600px; 
+        }
+    </style>
+</head>
+<body>
+    <div id="be">I am Developer</div>
+    <br><br>
+    <button onclick="youcan()">true/flase</button>
+    <script>
+       function youcan(){
+            var x = document.getElementById('be')
+
+
+            if(x.innerHTML==='true'){
+                x.innerHTML='false'
+            }
+            else{
+                x.innerHTML='true'
+            }
+
+            
+       }
+
+      
+
+
+    </script>
+</body>
+</html>

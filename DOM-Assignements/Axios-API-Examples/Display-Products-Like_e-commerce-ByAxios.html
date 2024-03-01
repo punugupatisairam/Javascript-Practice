@@ -1,0 +1,96 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        img{
+            width: 150px;
+            height: 150px;
+            background-color: lavenderblush; 
+            /* border: 1px solid red; */
+            padding-left: 45px;
+            padding-top: 20px;
+            mix-blend-mode: darken;
+        }
+        .fdiv{
+          
+            width: 250px;
+            height: 290px;
+            margin-left:  75px;
+            margin-top: 30px;
+            margin-bottom: 25px;
+            background-color: lavenderblush;
+            border-radius: 6px;
+            
+        }
+        .fdiv:hover{
+            box-shadow: 1px 1px 20px grey;
+            cursor: pointer;
+           
+        }
+        .sdiv{
+            display: flex;
+            flex-wrap: wrap;
+            
+        }
+        #bdi{
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        h6{
+            padding-left: 10px;
+        }
+        span{
+            padding-left: 10px;
+        }
+       
+
+    </style>
+</head>
+<div id="bdi"></div>
+
+
+<body>
+    <script>
+        var bdiv = document.getElementById('bdi')
+        var data = []
+        axios.get('https://fakestoreapi.com/products').then(function (res) {
+            // console.log(res);
+            data = res.data
+            // console.log(data);
+            newdata(data)
+        })
+
+        function newdata(arr){
+        arr.forEach(function (r) {
+            console.log(r);
+            var mdiv1 = document.createElement('div')
+
+            var div1 =document.createElement('div')
+            var img1 = document.createElement('img')
+            var title = document.createElement('h6')
+            var price = document.createElement('span')
+            var rating =document.createElement('span') 
+            img1.src=r.image
+            title.innerHTML=r.title
+            price.innerHTML= 'Price :' + r.price+ '&nbsp;' + '&nbsp;'
+            rating.innerHTML='Rating :' + r.rating.rate
+            div1.appendChild(img1)
+            div1.appendChild(title)
+            div1.appendChild(price)
+            div1.appendChild(rating)
+            mdiv1.appendChild(div1)
+            bdiv.appendChild(mdiv1)
+            div1.className='fdiv'
+            mdiv1.className='sdiv'
+
+        })
+    }
+    </script>
+</body>
+
+</html>

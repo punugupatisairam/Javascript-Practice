@@ -1,0 +1,234 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        #hdiv {
+            width: 80%;
+            height: 23%;
+            background: linear-gradient(#be2d46, rgb(234, 122, 18));
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-left: 130px;
+            color: white;
+        }
+
+        #hdiv2 {
+            display: flex;
+        }
+
+        #sdiv {
+            display: flex;
+        }
+
+        #inp {
+            width: 77%;
+            height: 6%;
+            margin-left: 128px;
+            /* margin-top: 20px; */
+        }
+
+        #addbut {
+            padding: 12px;
+            background-color: rgb(209, 7, 20);
+            border-radius: 5px;
+            /* width: 100px; */
+        }
+
+        .listd {
+            border: 1px solid;
+            width: 80%;
+            height: 6%;
+            margin-top: 10px;
+            margin-left: 130px;
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+            align-items: center
+        }
+
+        #hb {
+            background-color: blueviolet;
+            border-radius: 5px;
+            width: fit-content;
+            height: 30px;
+            margin-right: 20px;
+            color: white;
+        }
+
+        #hsa {
+            /* background-color: yellow; */
+            background: linear-gradient(#f40d33, rgb(182, 71, 31));
+            padding: 5px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            border-radius: 5px;
+
+            width: fit-content;
+        }
+
+        #hsc {
+            /* background-color: yellow; */
+            background: linear-gradient(#f40d33, rgb(182, 71, 31));
+            padding: 5px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            border-radius: 5px;
+
+            width: fit-content;
+        }
+
+        #hsp {
+            /* background-color: yellow; */
+            background: linear-gradient(#f40d33, rgb(182, 71, 31));
+            padding: 5px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            border-radius: 5px;
+
+            width: fit-content;
+        }
+
+        #headings {
+            margin-left: 130px;
+        }
+
+        #mynam {
+            margin-left: 15px;
+        }
+
+        .delbut {
+            color: brown;
+            font-size: 15px;
+            margin-left: 3px;
+            padding: 1px;
+            border: 1px solid;
+            position: absolute;
+            right: 5px;
+            top: 3px;
+            cursor: pointer;
+        }
+    </style>
+     
+</head>
+
+<body>
+    <div id="hdiv">
+        <h1 id="mynam">SaiRam Todolist</h1>
+        <div id="hdiv2">
+            <button id="hb">All <span id="hsa">0</span></button>
+            <button id="hb">Completed <span id="hsc">0</span></button>
+            <button id="hb">Pending <span id="hsp">0</span></button>
+        </div>
+    </div>
+
+    <h1 id="headings">Add Your Todo List</h1>
+    <input type="text" name="" id="inp" placeholder="Enter Todo Items ">
+    <button id="addbut" class="bi bi-plus-lg" onclick="addlist()"></button>
+    <h1 id="headings">All Todo's :</h1><br>
+
+    <div id="lists"></div>
+
+    <script>
+        var bdiv = document.getElementById('lists')
+        var inputs = document.getElementById('inp')
+        var all = document.getElementById('hsa')
+        var compltes = document.getElementById('hsc')
+        var pendings = document.getElementById('hsp')
+        var listres = []
+        function addlist() {
+            listres.push(inputs.value)
+            genlist(listres)
+            all.innerHTML = listres.length
+            pendings.innerHTML = listres.length
+
+
+        }
+        function genlist(arr) {
+            bdiv.innerHTML = ''
+            arr.forEach(function (ele, index) {
+                var list1 = document.createElement('div')
+                var listdata = document.createElement('span')
+                listdata.innerHTML = ele
+                list1.appendChild(listdata)
+                delBtn = document.createElement('span')
+                delBtn.innerHTML = '&#10005;'
+                list1.appendChild(delBtn)
+
+                var pen = document.createElement('span')
+                pen.innerHTML = 'pending'
+                list1.appendChild(pen)
+
+                var done = document.createElement('button')
+                done.innerHTML = 'done'
+                done.onclick = function () {
+                    if(done.innerHTML==='done'){
+                        done.innerHTML='undo'
+                        pen.innerHTML = '&#9745;'
+                        listdata.style.textDecoration='line-through'
+                    }
+                    else
+                    {
+                        done.innerHTML='done'
+                        pen.innerHTML = 'pending'
+                        listdata.style.textDecoration='none'
+                    }
+                   
+                    // done.style.display = 'none'
+                    // undob.style.display = 'inline-block'
+                    // undob.innerHTML='undo'
+                    pendings.innerHTML = pendings.innerHTML - 1
+                    compltes.innerHTML = all.innerHTML - pendings.innerHTML
+                }
+                list1.appendChild(done)
+
+                undob = document.createElement('button')
+                undob.innerHTML = 'undo'  
+                undob.style.display = 'none'
+                undob.onclick = function () {
+                    // pen.style.display = 'inline-block'
+                    undob.style.display = 'none'
+                    done.style.display = 'inline-block'
+                    pen.innerHTML = 'pending'
+
+                }               
+                list1.appendChild(undob)
+
+
+                var dateis = document.createElement('span')
+                var date1 = new Date();
+                // console.dir(date1);
+                var currentdate = date1.getDate() + "/" + (date1.getMonth() + 1) + "/" + date1.getFullYear()
+                dateis.innerHTML = currentdate
+                list1.appendChild(dateis)
+
+
+                delBtn.onclick = function () {
+                    listres.splice(index, 1)
+                    genlist(listres)
+                    all.innerHTML = listres.length
+                    pendings.innerHTML = listres.length 
+                    
+                }
+
+
+                // console.log(delBtn)
+                bdiv.appendChild(list1)
+
+                delBtn.className = 'delbut'
+                list1.className = 'listd'
+                done.className = 'doneb'
+                pen.className = 'penb'
+                inputs.value = ''
+            })
+
+        }
+
+    </script>
+</body>
+
+</html>

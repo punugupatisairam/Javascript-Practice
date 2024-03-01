@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #md{
+            width: 180px;
+            height: 150px;
+            border: 2px solid;
+        }
+    </style>
+</head>
+<body>
+    <div id="md"></div>
+    <button onclick="red()">red</button>
+    <button onclick="blue()">blue</button>
+    <button onclick="green()">green</button>
+    <button onclick="reset()">reset</button>
+    <script>
+        var res = document.getElementById('md')
+        res.style.backgroundColor='white'
+        function red(){
+            res.style.backgroundColor='red'
+        }
+        function blue(){
+            res.style.backgroundColor='blue'
+        }
+        function green(){
+            res.style.backgroundColor='green'
+        }
+        function reset(){
+            res.style.backgroundColor='white'
+        }
+
+    </script>
+</body>
+</html>

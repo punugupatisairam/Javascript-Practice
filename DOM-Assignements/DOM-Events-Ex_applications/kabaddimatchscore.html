@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: beige;
+        }
+        #md{
+            margin-top:5%;
+            display: flex;
+            align-items: center;
+            justify-content:space-around;
+            /* background-color: aqua; */
+            
+        }
+        h1{
+            color: blueviolet;
+            font-size: 70px;
+        }
+        #sc1{
+            color: blue;
+            font-size: 60px;
+        }
+        #headname{
+            color: red;
+            font: 80px;
+            text-align: center;
+            margin-top: 5%;
+        }
+        button{
+            font-size: 30px;
+            color:brown;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="headname">Pro Kabaddi League</h1>
+<div id="md">  
+    <div>
+    <h1>INDIA</h1>
+    <br><br><br>
+    <div id="sc1">Score: <span id="s1"></span></div>
+    <br><br>
+    <button onclick="inc()">Increment</button>&nbsp;&nbsp;&nbsp;&nbsp;
+    <button onclick="dec()">Decrement</button>
+    </div>
+    
+    <div>
+    <h1>PAKISTAN</h1>
+    <br><br><br>
+    <div id="sc1">Score: <span id="s2">Score</span></div> 
+    <br><br>
+    <button onclick="incr()">Increment</button>&nbsp;&nbsp;&nbsp;&nbsp;
+    <button onclick="decr()">Decrement</button>
+    </div>
+</div>
+
+    <script>
+        var c = 0;
+        var d =0;
+        document.getElementById('s1').innerHTML=c;
+        document.getElementById('s2').innerHTML=d;
+        function inc(){
+            c++
+            document.getElementById('s1').innerHTML=c;
+        }
+        function dec() {
+            c--
+            document.getElementById('s1').innerHTML=c;
+        }
+
+        function incr(){
+                d++
+                document.getElementById('s2').innerHTML=d;
+
+        }
+        function decr(){
+                d--
+                document.getElementById('s2').innerHTML=d;
+
+        }
+    </script>
+</body>
+</html>

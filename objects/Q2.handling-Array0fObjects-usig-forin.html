@@ -1,0 +1,113 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //For the given marks object solve the following
+    var marks = {
+                    "maths" : 34,
+                    "english" : 56,
+                    "science": 32,
+                    "hindi" : 75,
+                    "social science": 65
+                };
+                        
+//1)Print the marks of all the subjects.
+for( var a in marks)
+{
+    console.log(marks[a]);
+    6
+}
+//2)Print the names of all the subjects from the given object.
+for(var a in marks)
+{
+    console.log(marks);
+}
+//3)Count the number of subjects from the given object.
+var count = 0;
+for(var a in marks)
+{
+    count = count +1;
+}
+console.log(count);
+//4)Print the percentage of the marks of the student.
+var total =0;
+var percentage = 0;
+for(var a in marks)
+{
+    total = total + marks[a];
+    percentage = total/5*100;
+}
+console.log(percentage);
+//5)Print only those subjects where the student scored more than 35.
+for(var a in marks)
+{
+    if(marks[a]>35)
+    {
+        console.log(marks[a]);
+    }
+}
+//6)Print the pass/fail status of the subjects provided 35 is the pass mark.
+for(var a in marks)
+{
+    if(marks[a]>=35)
+    {
+        console.log("pass");
+    }
+    else
+    {
+        console.log("fail");
+    }
+}
+//7)Print only the passed subjects.
+for(var a in marks)
+{
+    if(marks[a]>=35)
+    {
+        console.log(marks[a]);
+    }
+}
+//8)Count the number of passed subjects.
+for(var a in marks)
+{
+    if(marks[a]>=35)
+    {
+        count++;
+    }
+    console.log(count);
+}
+//9)Print only the failed subjects.
+for(var a in marks){
+    if(marks[a]<35)
+    {
+        console.log(marks[a]);
+    }
+}
+//10)Count the number of failed subjects.
+// for(var a in marks)
+// {
+//     var 
+//     if(marks[a]<35)
+//     {
+//         c=c+1;
+//     }
+// }
+// console.log(c);
+//11)Print the least scored subject.
+//12)Print the highest scored subject.
+//13)Check whether the student has passed in all the subjects or not.
+//14)Take the subject name from the student through prompt box and print the subject marks and pass/fail status.
+var ar = [10,2,3,5,88,99,4]
+var text= ["sairam"]
+// var r = (text.split("a")); 
+
+// console.log(r);
+// console.log(r.join("a"));
+console.log(text.split(" "))
+
+    </script>
+</body>
+</html>

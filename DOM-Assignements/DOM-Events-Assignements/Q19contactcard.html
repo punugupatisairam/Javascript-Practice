@@ -1,0 +1,126 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: lemonchiffon;
+
+        }
+        #md{
+            margin-left: 500px;
+            margin-top: 50px;
+        }
+        h1{
+            font-size: 60px;
+            color: red;
+            text-align: center;
+            margin-top: 40px;
+        }
+        button{
+            margin-left: 50px;
+            background-color: orange;
+            font-size: 25px;
+            border-radius: 5px;
+        }
+       h6{
+        /* list-style-type: none; */
+        font-size: 15px;
+        color: red;
+        padding-left: 25px;
+        padding-right: 15px;
+       }
+       img{
+        border-radius: 100px;
+        width: 70px;
+        height: 70px;
+        margin-top: 15px;
+        margin-left: 60px;
+       }
+       label{
+        color: red;
+        font-size: 25px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+       }
+       #res{
+        margin-top:80px;
+        margin-left: 80px;
+        display: flex;
+        flex-wrap: wrap;
+
+        
+       }
+       .abc{
+        background-color: yellow;
+        border: 3px solid darkred;
+        width: fit-content;
+        /* height: 270px; */
+        margin: 25px;
+
+
+       }
+
+       
+    </style>
+</head>
+<body>
+    <h1>Add Contact Cards</h1>
+    <div id="md">
+    
+    <label >Name :</label><input type="text" name="" id="pname"><br><br>
+    <label >Number :</label><input type="text" name="" id="num"><br><br>
+    <label >Email :</label><input type="text" name="" id="mail"><br><br>
+    <label >Enter Image URL :</label> <input type="text" name="" id="url"><br><br><br>
+    <button onclick="addcon()">Add Contact</button>
+    </div>
+
+    <div id="res"></div>
+    
+    <script>
+        var imgurl = document.getElementById('url')
+        var name1 = document.getElementById('pname')
+        var num1 = document.getElementById('num')
+        var mail1 = document.getElementById('mail') 
+        var carddata = document.getElementById('res')
+
+        var res = []
+
+        function addcon(){
+
+            var obj = {
+                imageurl:url.value,
+                firstname: pname.value,
+                number:num.value,
+                mail:mail.value,
+        }
+        res.push(obj)
+        gencard(res)
+        
+    }
+        function gencard(data){
+            carddata.innerHTML= '';
+            data.forEach(function(mylist){
+            var mdiv = document.createElement('div')
+            var pimg = document.createElement('img')
+            var fh6= document.createElement('h6')
+            var sh6 = document.createElement('h6')
+            var th6= document.createElement('h6')
+            pimg.src=mylist.imageurl
+            fh6.innerHTML='Name :' + mylist.firstname
+            sh6.innerHTML= 'Number :'+ mylist.number
+            th6.innerHTML= 'Email :' + mylist.mail
+            mdiv.appendChild(pimg)
+            mdiv.appendChild(fh6)
+            mdiv.appendChild(sh6)
+            mdiv.appendChild(th6)
+            carddata.appendChild(mdiv)
+            mdiv.className='abc'
+        })
+        
+        }
+        
+
+    </script>
+</body>
+</html>

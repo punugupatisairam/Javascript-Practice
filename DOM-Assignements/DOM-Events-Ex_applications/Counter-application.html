@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Counter: <span id="s"></span></h1>
+    <button onclick="inc()">increment</button>
+    <button onclick="dec()">decrement</button>
+    <button onclick="reset()">reset</button>
+    <script>
+        var c = 0;
+        // document.getElementById('s').innerHTML=c;
+        function inc(){
+            c++;
+            document.getElementById('s').innerHTML=c;
+        }
+        function dec(){
+            c--;
+            document.getElementById('s').innerHTML=c;
+        }
+        function reset(){
+            c=0
+            document.getElementById('s').innerHTML=c;
+        }
+    </script>
+</body>
+</html>

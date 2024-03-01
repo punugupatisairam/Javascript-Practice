@@ -1,0 +1,180 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #indiv {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .bi{
+            font-size: 20px;
+        }
+        #ascb{
+            cursor: pointer;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <div id="indiv">
+        <label>name :</label><input type="text" id="pname"><br><br>
+        <label>Age :</label><input type="text" id="page"><br><br>
+        <label>City :</label><input type="text" id="pcity"><br><br>
+        <label>Image URL :</label><input type="text" id="pimg"><br><br><br>
+        <button onclick="submitbut()" id="adcard">Add Card</button>
+        <button id="upbt" onclick="updatebtn()">Update</button><br><br>
+        <span class="bi bi-sort-alpha-down" onclick="asc()" id="ascb"></span> 
+        <span class="bi bi-sort-alpha-up" onclick="des()" id="ascb"></span> 
+        <input type="search" id="fil" onkeyup="searchres()" placeholder="Search Here">
+    </div>
+    <div id="bdiv"></div>
+    <script>
+        var currentindex;
+        inpu = document.getElementById('fil') 
+        addcard = document.getElementById('adcard')
+        updbtn = document.getElementById('upbt')
+        updbtn.style.display = 'none'
+        bodydiv = document.getElementById('bdiv')
+        pename = document.getElementById('pname')
+        peage = document.getElementById('page')
+        pecity = document.getElementById('pcity')
+        peimg = document.getElementById('pimg')
+
+        var res = []
+        function submitbut() {
+            var obj = {
+                pername: pename.value,
+                age: peage.value,
+                city: pecity.value,
+                perimage: peimg.value,
+            }
+
+            res.push(obj)
+            console.log(res);
+
+            createcard(res)
+
+        }
+
+        function createcard(arr) {
+            bodydiv.innerHTML = "";
+            arr.forEach((ele, ind) =>{
+                card1 = document.createElement('div')
+                pimg = document.createElement('img')
+                pimg.src = ele.perimage
+                card1.appendChild(pimg)
+                br1 = document.createElement('br')
+                card1.appendChild(br1)
+
+                pername = document.createElement('span')
+                pername.innerHTML = 'Name :' + ele.pername
+                card1.appendChild(pername)
+                br2 = document.createElement('br')
+                card1.appendChild(br2)
+
+                perage = document.createElement('span')
+                perage.innerHTML = 'Age :' + ele.age
+                card1.appendChild(perage)
+                br3 = document.createElement('br')
+                card1.appendChild(br3)
+
+                percity = document.createElement('span')
+                percity.innerHTML = 'City :' + ele.city
+                card1.appendChild(percity)
+
+                delBtn = document.createElement('span')
+                // delBtn.innerHTML = '&#10006;'
+                delBtn.classList.add('bi')
+                delBtn.classList.add('bi-x-lg')
+                card1.appendChild(delBtn)
+
+
+                editBtn = document.createElement('button')
+                editBtn.innerHTML = 'Edit'
+                card1.appendChild(editBtn)
+
+                delBtn.onclick = ()=>{
+                    res.splice(ind, 1)
+                    createcard(res)
+                }
+
+                editBtn.onclick =  ()=> {
+                    pename.value = ele.pername
+                    peage.value = ele.age
+                    pecity.value = ele.city
+                    peimg.value = ele.perimage
+                    currentindex = ind;
+                    updbtn.style.display = 'inline-block'
+                    addcard.style.display = 'none'
+
+                }
+
+                bodydiv.appendChild(card1)
+                card1.style.border = '3px solid red'
+                card1.style.backgroundColor = 'yellow'
+                card1.style.width = '250px'
+                card1.style.height = '200px'
+                card1.style.textAlign = 'center'
+                card1.style.margin = '20px'
+                card1.style.borderRadius = '10px'
+                card1.style.position = 'relative'
+                delBtn.style.position = 'absolute'
+                delBtn.style.top = '5px'
+                delBtn.style.right = '5px'
+                delBtn.style.cursor = 'pointer'
+                editBtn.style.position = 'absolute'
+                editBtn.style.bottom = '5px'
+                editBtn.style.right = '5px'
+                editBtn.style.cursor = 'pointer'
+                pimg.style.marginTop = '10px'
+                pimg.style.borderRadius = '50px'
+                pimg.style.width = '70px'
+                pimg.style.height = '70px'
+                bodydiv.style.display = 'flex'
+                bodydiv.style.flexWrap = 'wrap'
+
+            })
+        }
+        function updatebtn() {
+            var obj2 = {
+                pername: pename.value,
+                age: peage.value,
+                city: pecity.value,
+                perimage: peimg.value,
+            }
+
+            res[currentindex] = obj2
+            createcard(res)
+            updbtn.style.display = 'none'
+            addcard.style.display = 'inline-block'
+        }
+        function asc(){
+            res.sort((a,b)=>{
+           var pn1 = a.pername.toLowerCase()
+           var pn2 = b.pername.toLowerCase()
+           if(pn1 > pn2){
+            return 1
+           }
+           else
+           {
+            return -1
+           }
+            })
+            createcard(res)
+        }
+        
+        function searchres(){
+        var filres = res.filter((each)=>{
+            return each.pername.toLowerCase().startsWith(inpu.value.toLowerCase())
+        })
+        createcard(filres)
+    }
+    </script>
+</body>
+
+</html>
+<!-- <i class="bi bi-arrow-down-up"></i> -->

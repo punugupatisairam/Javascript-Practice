@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #b1{
+            background-color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 300px;
+        }
+    </style>
+</head>
+<body>
+    <button id="b1" onclick="abc()">white</button>
+    <script>
+        function abc(){
+            var x = document.getElementById('b1')
+            var y= x.style.backgroundColor;
+            if(y === 'white'){
+                x.style.backgroundColor= 'green';
+            }
+            else
+            {
+                x.style.backgroundColor= 'white';
+            }
+        
+        }
+
+    //     function changeColor() {
+    //     var button = document.getElementById('b1');
+    //     var currentColor = button.style.backgroundColor;
+
+    //     // Toggle between white and green
+    //     if (currentColor === 'white') {
+    //         button.style.backgroundColor = 'green';
+    //     } else {
+    //         button.style.backgroundColor = 'white';
+    //     }
+    // }
+    
+        
+    </script>
+</body>
+</html>

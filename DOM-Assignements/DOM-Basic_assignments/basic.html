@@ -1,0 +1,168 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: cornsilk;
+        }
+        *{
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        .change{
+            color: brown;
+            background-color: aqua;
+            border: 3px solid salmon;
+            padding: 10px;
+            text-align: center;
+        }
+        .newsty{
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-size: large;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+            background-color: crimson;
+            border:3px solid cornflowerblue;
+            padding: 10px;
+            /* box-shadow: 10px 10px blueviolet; */
+
+        }
+        table,tr,th{
+            border: 2px solid;
+            border-collapse: collapse;
+            padding: 5px;
+
+        }
+        td{
+            border: 2px solid;
+
+
+        }
+       
+        table{
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="dref">
+    <!-- <h1 id="d1">This Is My First Javascript DOM </h1>
+    <button onclick="chg()">change text</button>
+    <p>learning is the greastest thing in the world so if you like the learning process you will get the what your focusing so concentrated on learniing </p>
+    <h2 id="d2">you can acheive anything ,nothing is impossible</h2>
+    <p>learning is the greastest thing in the world so if you like the learning process you will get the what your focusing so concentrated on learniing </p>
+     -->
+   
+
+    </div>
+    <script>
+
+        var dref = document.getElementById('dref')
+        var newone = document.createElement('h2')
+        newone.innerText='you can see JS DOM magics here 🎁 '
+        dref.appendChild(newone)
+        newone.className= 'change'
+
+        var h1 = document.createElement('h1')
+        h1.innerHTML='edupoly RB31 Batch Details'
+        dref.appendChild(h1)
+        h1.className='newsty'
+
+        var table = document.createElement('table')
+        dref.appendChild(table)
+        var tr = document.createElement('tr')
+        var th1 = document.createElement('th')
+        th1.innerText='Name'
+        var th2 = document.createElement('th')
+        th2.innerText='Mobile Number'
+        var th3 = document.createElement('th')
+        th3.innerText='Gmail'
+        table.appendChild(tr)
+        tr.appendChild(th1)
+        tr.appendChild(th2)
+        tr.appendChild(th3)
+
+        var tr2 =document.createElement('tr')
+        var td1 = document.createElement('td')
+        td1.innerText='sairam'
+        var td2 = document.createElement('td')
+        td2.innerText='9985522109'
+        var td3 =document.createElement('td')
+        td3.innerText='sai@gmail.com'
+        tr2.appendChild(td1)
+        tr2.appendChild(td2)
+        tr2.appendChild(td3)
+        table.appendChild(tr2)
+        dref.appendChild(table)
+
+        var tr2 =document.createElement('tr')
+        var td1 = document.createElement('td')
+        td1.innerText='karim'
+        var td2 = document.createElement('td')
+        td2.innerText='9999999999'
+        var td3 =document.createElement('td')
+        td3.innerText='karim@gmail.com'
+        tr2.appendChild(td1)
+        tr2.appendChild(td2)
+        tr2.appendChild(td3)
+        table.appendChild(tr2)
+        dref.appendChild(table)
+
+        var tr2 =document.createElement('tr')
+        var td1 = document.createElement('td')
+        td1.innerText='satya'
+        var td2 = document.createElement('td')
+        td2.innerText='8888888888'
+        var td3 =document.createElement('td')
+        td3.innerText='satya@gmail.com'
+        tr2.appendChild(td1)
+        tr2.appendChild(td2)
+        tr2.appendChild(td3)
+        table.appendChild(tr2)
+        dref.appendChild(table)
+
+        var tr2 =document.createElement('tr')
+        var td1 = document.createElement('td')
+        td1.innerText='sandeep'
+        var td2 = document.createElement('td')
+        td2.innerText='7777777777'
+        var td3 =document.createElement('td')
+        td3.innerText='sandeep@gmail.com'
+        tr2.appendChild(td1)
+        tr2.appendChild(td2)
+        tr2.appendChild(td3)
+        table.appendChild(tr2)
+        dref.appendChild(table)
+        
+        
+
+
+        
+
+        // var elem = document.getElementById('d1')
+        // elem.innerText = "lets hit the DOM";
+        // function chg(){
+        //     // var elem = document.getElementById('d1')
+        // elem.innerHTML = "lets hit the DOM";
+        // elem.style.color='red'
+        // elem.className = 'change newsty'
+        // }
+
+        // var elem1 = document.getElementById("d1")
+        // var emem2 = document.getElementById("d2")
+        
+        // var paras = document.getElementsByTagName('p')
+        // console.dir(paras);
+        // var els2 = document.querySelectorAll('p')
+        // console.dir(els2)
+
+        // var els3 = document.querySelector('#d1')
+        // console.dir(els3)
+
+    </script>
+</body>
+</html>

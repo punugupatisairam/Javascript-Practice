@@ -1,0 +1,83 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #bd {
+            text-align: center;
+            margin-top: 150px;
+            
+        }
+        body{
+            background-color: lemonchiffon;
+            color:blue;
+            font-size: 20px;
+        }
+        button{
+            background-color: lightgreen;
+            font-size: 20px;
+            margin: 10px;
+            border-radius: 5px; 
+            padding: 5px;
+        
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bd">
+        <button onclick="checkin()">IN</button>
+        <button onclick="checkout()">OUT</button>
+        <button onclick="total()">Total</button><br><br><br>
+        <span>Total Time Worked: <span id="totcount"></span></span>
+        <h1>Time Log :</h1>
+        <span id="in"></span>
+        <!-- <span id="out"></span> -->
+    </div>
+    <script>
+        var int = document.getElementById('in')
+        var tc = document.getElementById('totcount')
+        // var outt = document.getElementById('out')
+
+        var indisplay
+        var today;
+        var date1
+        function checkin() {
+            date1 = new Date()
+            today = 'IN :' + date1.getDate() + '/' + date1.getMonth() + '/' + date1.getFullYear() + 'Time :' + date1.getHours() + ':' + date1.getMinutes() + ':' + date1.getSeconds() + ':' + date1.getMilliseconds()
+            indisplay = document.createElement('span')
+            indisplay.innerHTML = today
+            int.appendChild(indisplay)
+            var br = document.createElement('br')
+            int.appendChild(br)
+        }
+        var outdisplay;
+        var today1 
+        var date2
+        function checkout() {
+            date2 = new Date()
+            today1 = 'OUT :' + date2.getDate() + '/' + date2.getMonth() + '/' + date2.getFullYear() + 'Time :' + date2.getHours() + ':' + date2.getMinutes() + ':' + date2.getSeconds() + ':' + date2.getMilliseconds()
+            outdisplay = document.createElement('span')
+            outdisplay.innerHTML = today1
+            int.appendChild(outdisplay)
+            var br = document.createElement('br')
+            int.appendChild(br)
+        }
+
+        function total(){
+            var tot = date2.getTime()-date1.getTime()
+            tc.innerHTML=tot+'ms'
+            console.log(tot);
+        }
+         var date2 = new Date(1998)
+         today1 = 'OUT :' + date2.getDate() + '/' + date2.getMonth() + '/' + date2.getFullYear() + 'Time :' + date2.getHours() + ':' + date2.getMinutes() + ':' + date2.getSeconds() + ':' + date2.getMilliseconds()
+
+         console.log('day is',date2);
+        //  var today = t.getTime()
+        //  console.log(today);
+    </script>
+</body>
+
+</html>

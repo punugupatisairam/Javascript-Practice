@@ -1,0 +1,61 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="ref"></div>
+    <script>
+        var res = [];
+        var bdiv = document.getElementById('ref')
+        let request = new XMLHttpRequest(); //OBJECT CREATION ,
+        request.open('GET', 'https://fakestoreapi.com/products')//REQUEST CREATION
+        request.send(); //REQUEST SENDING
+        // console.log(request.response); 
+        console.log('hi');
+
+
+        request.onload = (response) => {
+            console.log(request);
+            if (request.status === 200) {
+                // console.log(request.response); //by default XMLHttp gives text format
+                console.log(JSON.parse(request.response));
+            }
+            else {
+                console.log(`error ${request.status}`);
+            }
+
+            res.push(request)
+            console.log(res);
+            gendata(res)
+        }
+        function gendata(arr) {
+            arr.forEach(e => {
+                var mdiv = document.createElement('div')
+
+                var div1 = document.createElement('div')
+                var image = document.createElement('img')
+                var title1 = document.createElement('span')
+                // image.src = e.image
+                title1.innerHTML = e.title
+                div1.appendChild(image)
+                div1.appendChild(title1)
+
+                mdiv.appendChild(div1)
+                bdiv.appendChild(mdiv)
+
+            });
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

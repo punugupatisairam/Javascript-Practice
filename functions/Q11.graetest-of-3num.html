@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //Write a function which can display the greatest of the three numbers passed in arguments.
+        function great(a,b,c)
+        {
+            if(a>b&&a>c)
+            {
+                if(b<c){
+                    console.log(a);
+                }
+            }
+            else if(b>a && b>c)
+            {
+                if(a>c){
+                    console.log(b);
+                }
+            }
+            else
+            {
+                console.log(c);
+            }
+        }
+        var a=+prompt();
+        var b=+prompt();
+        var c=+prompt();
+        great(a,b,c)
+    </script>
+</body>
+</html>

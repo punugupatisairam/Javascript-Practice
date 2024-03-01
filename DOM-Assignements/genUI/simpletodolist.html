@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="inp">
+    <button onclick="add()">add</button>
+    <ul id="mlist">
+
+    </ul>
+    <script>
+        var inp = document.getElementById('inp')
+        var mylist = document.getElementById('mlist')
+        var tasks = []
+        function add(){
+            mylist.innerHTML='';
+            tasks.push(inp.value)
+            tasks.forEach(function(mytask){
+            var li = document.createElement('li')
+            li.innerHTML=mytask
+            mylist.appendChild(li)
+            })
+          
+        }
+    </script>
+</body>
+</html>

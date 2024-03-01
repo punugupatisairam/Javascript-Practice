@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>  
+        #md{
+            margin-left: 600px;
+            margin-top: 200px;
+        }
+        button{
+            background-color: lightcyan;
+        }
+    </style>
+</head>
+<body>
+    <div id="md">
+    <button onclick="like()" >Like </button> &nbsp;&nbsp;&nbsp;<span id="inc"></span><br><br>
+    
+    <button onclick="dislike()">Dislike </button> &nbsp;&nbsp;&nbsp;<span id="dec"></span> <span id="dec"></span>
+    </div>
+</body>
+    <script>
+        var x = document.getElementById('inc')
+        var y = document.getElementById('dec')
+        var i =0;
+        var j=0;
+        function like(){
+            x.innerHTML=i    
+            i++;
+        }
+        function dislike(){
+            y.innerHTML=j
+            j++;
+        }
+    </script>
+</body>
+</html>

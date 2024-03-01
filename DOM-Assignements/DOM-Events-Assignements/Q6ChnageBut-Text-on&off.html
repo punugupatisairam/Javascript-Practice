@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #d{
+        border: 2px solid;
+        width: 40px;
+        height: 50px;
+    }
+    </style>
+</head>
+<body>
+    <div id="d" onclick="ican()"></div>
+    <script>
+        // var i =0;
+        // var r=document.getElementById('d')
+        // var ar = ['on','off']
+        // r.innerHTML=ar[i]
+
+        // function ican(){
+        //     if(i==ar.length-1){
+        //         i=0;
+        //         r.innerHTML=ar[i]
+        //     }
+        //     else
+        //     {
+        //        i++
+        //        r.innerHTML=ar[i]
+        //     }
+        // }
+        var x = document.getElementById('d')
+        var y = x.innerHTML='on'
+
+        function ican(){
+            if(x.innerHTML==='on'){
+                x.innerHTML='off'
+            }
+            else
+            {
+                x.innerHTML='on'
+            }
+        }
+    </script>
+</body>
+</html>

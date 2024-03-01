@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // display student pass status based on marks
+        var a = +prompt();
+        var b = +prompt();
+        var c = +prompt();
+        // (a+b+c)/3>90?console.log("first class"):(a+b+c)/3>60?console.log("second class"):(a+b+c)/3>35?console.log("pass"):console.log("fail");
+
+        // (a>b) (b>c)>=90?console.log("distinction"):(b>a) (a>c)>=65?console.log("first class"):(c>a) (a>b)>=35?console.log("pass"):console.log("fail");
+    
+        if(a>35 && b>35 && c>35)
+        {
+            console.log("pass")
+            
+        if(a>65 && b>65 && c>65)
+         {
+            console.log("first class")
+          
+         }
+            
+        if(a>90 && b>90 && c>90)
+        {
+            console.log("distinction")
+        }
+    }
+    else 
+    console.log("fail")
+
+   
+    </script>
+</body>
+
+
+</html>

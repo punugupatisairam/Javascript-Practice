@@ -1,0 +1,113 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="userform" onsubmit="event.preventDefault()">
+        <div>
+            <label for="">FirstName :</label>
+            <input type="text" name="firstname">
+        </div><br>
+        <div>
+            <label for="">LastName :</label>
+            <input type="text" name="lastname">
+        </div><br>
+        <div>
+            <label for="">Age :</label>
+            <input type="text" name="age">
+        </div><br>
+        <div>
+            <label for="">Gender :</label>
+            <input type="radio" name="gender" value="male"><label>Male</label>
+            <input type="radio" name="gender" value="female"><label ></label>Female</label>
+            <input type="radio" name="gender" value="others"><label>others</label>
+        </div><br>
+        <div>
+            <label for="">Known Languages :</label>
+            <input type="checkbox" name="languages" value="english"><label >English</label>
+            <input type="checkbox" name="languages" value="telugu"><label >Telugu</label>
+            <input type="checkbox" name="languages" value="hindi"><label>Hindi</label>
+        </div><br>
+        <div>
+            <label for="">Nationality :</label>
+            <select name="nationality" id="">
+                <option  value="disabled " disabled selected>Please Select Your Nationality</option>
+                <option value="India">India</option>
+                <option value="UK">UK</option>
+                <option value="US">US</option>
+                <option value="Australia">Australia</option>
+            </select>
+        </div>
+        <br>
+        <button onclick="add()">submit</button>    
+    </form>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Languages</th>
+                <th>Nationality</th>
+            </tr>
+        </thead>
+        <tbody id="tb">
+
+        </tbody>
+    </table>
+    <script>
+        var tbd = document.getElementById('tb')
+        var info = [];
+        function  add(){
+                var lang = [];
+                for(var i=0;i<userform.languages.length-1;i++){
+                    if(userform.languages[i].checked===true){
+                        lang.push(userform.languages[i].value)
+                    }
+                }
+
+                var obj = {
+                    fname :userform.firstname.value,
+                    lname:userform.lastname.value,
+                    age:userform.age.value,
+                    gender:userform.gender.value,
+                    languages : lang,
+                    nationality : userform.nationality.value,
+                }
+                info.push(obj)
+                // console.log(info);
+                
+                gentable(info)
+        }
+               function gentable(arr) {
+                tbd.innerHTML= '';
+               arr.forEach(function(data){
+                    var newtr = document.createElement('tr')
+                    var td1 = document.createElement('td')
+                    var td2 = document.createElement('td')
+                    var td3 = document.createElement('td')
+                    var td4 = document.createElement('td')
+                    var td5 = document.createElement('td')
+                    var td6 = document.createElement('td')
+                    td1.innerHTML=data.fname
+                    td2.innerHTML=data.lname
+                    td3.innerHTML=data.age
+                    td4.innerHTML=data.gender
+                    td5.innerHTML=data.languages
+                    td6.innerHTML=data.nationality
+                    newtr.appendChild(td1)                    
+                    newtr.appendChild(td2)                    
+                    newtr.appendChild(td3)                    
+                    newtr.appendChild(td4)                    
+                    newtr.appendChild(td5)                    
+                    newtr.appendChild(td6)  
+                    tbd.appendChild(newtr)                  
+                })
+        
+            }
+    </script>
+</body>
+</html>

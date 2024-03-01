@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //Write a function that returns an array of all even numbers between 1 and 20.
+    function evenarray(start,end)
+    {
+        var numarray=[];
+        for(var i=start;i<=end;i++)
+        {
+            if(i%2===0)
+            {
+                numarray.push(i);
+            }
+        }
+        return numarray
+    }
+    var start=+prompt();
+    var end  =+prompt();
+    var res = evenarray(start,end);
+    console.log(res);
+    
+
+    </script>
+</body>
+</html>

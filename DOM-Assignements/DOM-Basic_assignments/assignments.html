@@ -1,0 +1,222 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        thead,
+        th,
+        tr,
+        td {
+            border: 3px solid;
+            border-collapse: collapse;
+        }
+
+        /* img{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        } */
+    </style>
+</head>
+
+<body>
+    <div id="s1"></div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>fullname</th>
+                <th>place</th>
+                <th>gender</th>
+            </tr>
+        </thead>
+        <tbody id="tb">
+
+
+        </tbody>
+    </table>
+    <p id="im"></p>
+    <ul id="myli"></ul>
+    <ol id="myol"></ol>
+    <script>
+        //1.,2. Create one h1 element and put some text into it and add color.
+        var s1 = document.getElementById('s1')
+        var s = document.createElement('h1')
+        s.innerHTML = 'iam more than what you see'
+        s1.appendChild(s)
+        s.style.color = 'red'
+
+        //3. Take an array of names and create a list from it.
+        var ar1 = ['sudhakar', 'sai', 'ran', 'stanley', 'rosilline']
+        for (var i = 0; i <= ar1.length - 1; i++) {
+            var a = document.createElement('li')
+            a.innerHTML = ar1[i]
+            s1.appendChild(a)
+        }
+
+        //4. Take an array of numbers and create a list from it.
+
+        var ar2 = ['2', '7', '1', '3', '9']
+        for (var i = 0; i <= ar2.length - 1; i++) {
+            var a1 = document.createElement('li')
+            a1.innerHTML = ar2[i]
+            s1.appendChild(a1)
+        }
+
+        //5. Take an array of objects and create a table form it.
+        var employees = [
+            {
+                fullname: 'sairam',
+                place: 'sr nagar',
+                gender: 'male'
+            },
+            {
+                fullname: 'sudhakar',
+                place: 'jntuh',
+                gender: 'male'
+            },
+            {
+                fullname: 'karim',
+                place: 'palakollu',
+                gender: 'male'
+            },
+            {
+                fullname: 'sandeep',
+                place: 'vizag',
+                gender: 'male'
+            }
+        ]
+
+        for (var i = 0; i <= employees.length - 1; i++) {
+            var ref = document.getElementById('tb')
+            var newtr = document.createElement('tr')
+            var td1 = document.createElement('td')
+            td1.innerHTML = employees[i].fullname
+            newtr.appendChild(td1)
+            tb.appendChild(newtr)
+
+            var td2 = document.createElement('td')
+            td2.innerHTML = employees[i].place
+            newtr.appendChild(td2)
+            tb.appendChild(newtr)
+
+            var td3 = document.createElement('td')
+            td3.innerHTML = employees[i].gender
+            newtr.appendChild(td3)
+            tb.appendChild(newtr)
+        }
+
+        // 6.Take an array of image urls and display the images in browser.
+        var my = document.getElementById('im')
+        var images = ['https://static.vecteezy.com/system/resources/thumbnails/001/416/705/small/html5-emblem-orange-shield-and-white-text-vector.jpg', 'https://www.freepnglogos.com/uploads/javascript-png/png-javascript-badge-picture-8.png', 'https://www.freepnglogos.com/uploads/javascript-png/png-javascript-badge-picture-8.png']
+
+        for (var i = 0; i <= images.length - 1; i++) {
+            var pic = document.createElement('img')
+            pic.src = images[i]
+            my.appendChild(pic)
+        }
+
+        // 7.Generate List Elements using document object for the given Array of Objects
+
+        var students = [
+            {
+                name: 'jaya',
+                gender: 'female',
+                place: 'gachibowli',
+            },
+            {
+                name: 'dasu',
+                gender: 'male',
+                place: 'kphb'
+            },
+            {
+                name: 'swati',
+                gender: 'female',
+                place: 'pune'
+            },
+            {
+                name: 'pallavi',
+                gender: 'female',
+                place: 'assam'
+            },
+            {
+                name: 'kiran',
+                gender: 'male',
+                place: 'kondapur'
+            },
+            {
+                name: 'thirumala',
+                gender: 'male',
+                place: 'madhapur'
+            },
+            {
+                name: 'priya',
+                gender: 'female',
+                place: 'hitech'
+            },
+        ]
+
+        for (var i = 0; i <= students.length - 1; i++) {
+            var x = document.getElementById('myli')
+            var mli = document.createElement('li')
+            var ull = document.createElement('ul')
+            var sli1 = document.createElement('li')
+            var sli2 = document.createElement('li')
+            mli.innerHTML = students[i].name
+            sli1.innerHTML = students[i].gender
+            sli2.innerHTML = students[i].place
+            x.appendChild(mli)
+            mli.appendChild(ull)
+            ull.appendChild(sli1)
+            ull.appendChild(sli2)
+            console.log(ull);
+
+        }
+
+        //8.Display the above data like the following image using Javascript DOM Element creation and append
+
+        var students = [
+            {
+                "firstname": "praveen",
+                "age": 36,
+                "subjects": ['angular', 'nodejs', 'reactjs', 'java']
+            },
+            {
+                "firstname": "srikanth",
+                "age": 32,
+                "subjects": ['react', 'mongodb']
+            },
+            {
+                "firstname": "pradeep",
+                "age": 21,
+                "subjects": ['express', 'mongoose', 'python']
+            }
+        ]
+
+        for (var i = 0; i <= students.length - 1; i++) {
+            var mol = document.getElementById('myol')
+            var li = document.createElement('li')
+            li.innerHTML = students[i].firstname
+            var sol = document.createElement('ol')
+
+            for (j = 0; j <= students[i].subjects.length - 1; j++) {
+
+                var sli1 = document.createElement('li')
+                sli1.innerHTML = students[i].subjects[j]
+                sol.appendChild(sli1)
+                li.appendChild(sol)
+                mol.appendChild(li)
+
+            }
+
+        }
+
+    
+
+    </script>
+</body>
+
+</html>

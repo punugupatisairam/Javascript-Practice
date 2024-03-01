@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //     //Write a program to print the least number in given two numbers
+    //     var a = +prompt();
+    //     var b = +prompt();
+    //     (a<b)?console.log(a,"it is least number" ):console.log(b,"not aleast number");
+
+            // var a = +prompt()
+            // var b = +prompt()
+            // var c = +prompt()
+            // a<b && a<c?console.log(a):b<a&&b<c?console.log(b):console.log(c); 
+
+//  Write a program to print the reminder of a division
+     // Get user input for dividend and divisor
+var dividend = parseInt(prompt("Enter the dividend:")); 
+var divisor = parseInt(prompt("Enter the divisor:"));
+
+if (divisor !== 0) {                         // Check if the divisor is not zero
+
+  var remainder = dividend % divisor;          // Calculate the remainder
+
+  // Print the result
+  console.log(`The remainder of ${dividend} divided by ${divisor} is: ${remainder}`);
+} else {
+  console.log("Error: Division by zero is not allowed.");
+}
+
+    </script>
+  
+    <script src=""></script>
+</body>
+</html>

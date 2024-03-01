@@ -1,0 +1,136 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #st1,
+        #st2,
+        #st3,
+        #st4,
+        #st5 {
+            /* margin: 10px; */
+            padding: 10px;
+            font-size: 150px;
+            cursor: pointer;
+        }
+
+        #d1 {
+            margin-left: 300px;
+            margin-top: 0px;
+        }
+
+        #d {
+            margin-left: 10px;
+            margin-top: 5px;
+            font-size: 50px;
+            /* text-shadow: 2px 2px 2px cyan; */
+        }
+
+        #sym {
+            margin-left: 270px;
+            font-size: 200px;
+            margin-top: 0px;
+        }
+
+        #em {
+            margin-left: 325px;
+            font-size: 70px;
+            margin-top: 10px;
+        }
+
+        /* .sta5::before{
+            color: red;
+            background-color: red;
+        } */
+        span {
+            color: rgb(238, 228, 228);
+        }
+        #t{
+            text-align: center;
+             color: brown; 
+             margin-top: 20px;
+             font-size: 50px;
+        }
+
+        /* h1{
+            color: cornflowerblue;
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- <h1 id="t">Kindly Give Your Valuble Rating</h1> -->
+    <div id="d1">
+        <span onclick="s1()" id="st1">&#x2605;</span>
+        <span onclick="s2()" id="st2">&#x2605;</span>
+        <span onclick="s3()" id="st3">&#x2605;</span>
+        <span onclick="s4()" id="st4">&#x2605;</span>
+        <span onclick="s5()" id="st5">&#x2605;</span>
+        <h1 id="em"></h1>
+        <h1 id="d"></h1>
+        <h1 id="sym"></h1>
+    </div>
+    <script>
+        var x = document.getElementById('d')
+        var f = document.getElementById('sym')
+        var g = document.getElementById('em')
+        var a = document.getElementById('st1')
+        var b = document.getElementById('st2')
+        var c = document.getElementById('st3')
+        var d = document.getElementById('st4')
+        var e = document.getElementById('st5')
+
+        function s1() {
+            x.innerHTML = 'Thank You For One Star Rating : 1'
+            x.style.color = 'yellow'
+            a.style.color = 'yellow'
+            g.innerHTML = '&#128532;'
+        }
+
+        function s2() {
+            x.innerHTML = 'Thank You For Two Star Rating : 2'
+            x.style.color = 'orange'
+            a.style.color = 'orange'
+            b.style.color = 'orange'
+            g.innerHTML = '&#128529;'
+        }
+
+        function s3() {
+            x.innerHTML = 'Thank You For Three Star Rating : 3'
+            x.style.color = 'green'
+            a.style.color = 'green'
+            b.style.color = 'green'
+            c.style.color = 'green'
+            g.innerHTML = '&#128522;'
+
+        }
+        function s4() {
+            x.innerHTML = 'Thank You For Four Star Rating : 4'
+            x.style.color = 'blue'
+            a.style.color = 'blue'
+            b.style.color = 'blue'
+            c.style.color = 'blue'
+            d.style.color = 'blue'
+            g.innerHTML = '&#128526;'
+
+        }
+        function s5() {
+            x.innerHTML = 'Thank You For FIVE Star Rating : 5'
+            x.style.color = 'red'
+            a.style.color = 'red'
+            b.style.color = 'red'
+            c.style.color = 'red'
+            d.style.color = 'red'
+            e.style.color = 'red'
+            f.style.color = 'red'
+            f.innerHTML = '&#10084;'
+            g.innerHTML = '&#128525;'
+
+        }
+
+    </script>
+</body>
+
+</html>

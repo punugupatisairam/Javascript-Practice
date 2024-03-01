@@ -1,0 +1,37 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //7)Write a function which can check a given number is palindrome or not
+        function palindrome(a)
+        {
+            var rem =0;
+            var res =0;
+            var input = a;
+            for(var i =0;a>0;i++)
+            {
+                rem = a%10;
+                res = res *10+rem;
+                a = parseInt(a/10);
+
+            }
+            if(res ===input){
+                return 'palindrome'
+            }
+            else
+            {
+                return "not palindrome"
+            }
+        }
+        var result = palindrome(128)
+        console.log(result);
+    </script>
+</body>
+
+</html>

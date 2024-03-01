@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>sairam</h1>
+    <h1>sai</h1>
+    <h1>ram</h1>
+    <h2>sudhakar</h2>
+    <h1>you greate</h1>
+    <h2>you can</h2>
+    <p>hai</p>
+    <script>
+        var s = document.getElementsByTagName('h1')
+        console.log(s);
+        var p = document.querySelectorAll('h2')
+        var k = document.querySelector('p')
+        console.log(k);
+        console.log(p);
+
+        for(var i=0;i<=s.length-1;i++)
+        {
+            s[i].style.color='red';
+            s[i].style.fontSize='60px'
+        }
+
+        p.forEach(function(m){
+            m.style.backgroundColor='yellow';
+        })
+
+    </script>
+    
+</body>
+</html>

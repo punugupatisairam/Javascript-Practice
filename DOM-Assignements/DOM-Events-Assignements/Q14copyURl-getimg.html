@@ -1,0 +1,108 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        h1{
+            text-align: center;
+            margin-top: 100px;
+            color: red;
+            font-size: 50px;
+
+        }
+        body{
+            background-color: lemonchiffon;
+        }
+        #md{
+            margin-top: 60px;
+            margin-left: 550px;
+        }
+        button{
+            color: orange;
+            margin-top: 30px;
+            font-size: 20px;
+        }
+        #t{
+            font-size: 20px;
+            color: red;
+        }
+        img{
+            width: 250px;
+            height: 250px;
+            margin-left: 100px;
+            padding: 5px;
+            padding-left: 60px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Show Images Using URL</h1>
+    <div id="md">
+    <label for="" id="t"> Enter Image URL :</label>
+    <input type="text"  id="inp"><br><br>
+    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+    <button onclick="add()">Add Image</button>
+    </div>
+    <br>
+    <span id="op"></span>
+    <script>
+
+        var inp = document.getElementById('inp')
+        var output = document.getElementById('op')
+        var arr = [];
+        
+        function add(){
+            output.innerHTML='';
+            arr.push(inp.value)
+            arr.forEach(function(data){
+                var newimg = document.createElement('img')
+                newimg.src=data
+                output.appendChild(newimg)
+                inp.value=''
+
+            })
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // var img = document.createElement('input').value 
+        // console.log(img);
+        // var dref = document.getElementById('d1')
+        // var x = document.createElement('img')
+        // x.setAttribute('src', 'https://dharmapublication.com/wp-content/uploads/2023/08/Firefly-A-Beautiful-Island-at-the-middle-of-the-ocean-surrounding-a-huge-jungle-at-night-moon-hd-3.jpg')
+        // x.setAttribute('width', '500px')
+        // dref.appendChild(x)
+        // dref.appendChild(img)
+    </script>
+</body>
+
+</html>
