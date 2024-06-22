@@ -13,6 +13,9 @@
             border: 3px solid;
             border-collapse: collapse;
         }
+        img{
+            width: 200px;
+        }
 
         /* img{
             display: flex;
@@ -113,11 +116,18 @@
         var my = document.getElementById('im')
         var images = ['https://static.vecteezy.com/system/resources/thumbnails/001/416/705/small/html5-emblem-orange-shield-and-white-text-vector.jpg', 'https://www.freepnglogos.com/uploads/javascript-png/png-javascript-badge-picture-8.png', 'https://www.freepnglogos.com/uploads/javascript-png/png-javascript-badge-picture-8.png']
 
-        for (var i = 0; i <= images.length - 1; i++) {
+        // for (var i = 0; i <= images.length - 1; i++) {
+        //     var pic = document.createElement('img')
+        //     pic.src = images[i]
+        //     my.appendChild(pic)
+        // }
+
+        images.forEach((each)=>{
             var pic = document.createElement('img')
-            pic.src = images[i]
+            pic.src=each
             my.appendChild(pic)
-        }
+
+        })
 
         // 7.Generate List Elements using document object for the given Array of Objects
 

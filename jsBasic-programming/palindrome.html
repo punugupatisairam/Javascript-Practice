@@ -1,0 +1,64 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //wap to check the number is palindrome or not
+
+        //The term derives from the Greek palin dromo (“running back again”). Examples of word palindromes include “civic,” “madam,” “radar,” and “deified.” Numerical palindromes include sequences that read the same in reverse order (e.g., 1991), as well as those that can be read upside down and backward (e.g., 1961).
+        
+        // var num = 121;
+        // var temp = num;
+        // var digit;
+        // var sum = 0;
+
+        // while(num>0){
+        //     digit = num%10;
+        //     sum = sum * 10 + digit;
+        //     num = parseInt(num/10)
+        // }
+        // if(temp==sum){
+        //     console.log("palindrome number");
+        // }
+        // else
+        // {
+        //     console.log("not a palindrome number");
+        // }
+
+
+
+        //wap to check the string is palindrome or not
+        // var str = "madam"
+        // var rev = str.split('').reverse().join('')
+        // if(str==rev){
+        //     console.log('its a palindrome');
+        // }
+        // else
+        // {
+        //     console.log('its not palindrome');
+        // }
+
+        //using functions check the given string is palidome or not
+        function palindrome(str) {
+            var rev = str.split('').reverse().join('')
+            if (str == rev) {
+                console.log('palindrome');
+            }
+            else {
+                console.log('not palindrome');
+            }
+        }
+        palindrome('madam')
+
+
+       
+
+    </script>
+</body>
+
+</html>
