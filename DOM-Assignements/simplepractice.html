@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Div</title>
+    <style>
+        #d1 {
+            background-color: blueviolet;
+            width: 600px;
+            height: 300px;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1"></div>
+
+    <script>
+        var cha = document.getElementById("d1");
+        var isLarge = true; // Track state
+
+        cha.onclick = function () {
+            if (isLarge) {
+                cha.style.backgroundColor = "blue";
+                cha.style.width = "300px";
+            } else {
+                cha.style.backgroundColor = "blueviolet";
+                cha.style.width = "600px";
+            }
+            isLarge = !isLarge; // Toggle state
+        };
+    </script>
+</body>
+</html>
+
+
+<!-- 
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Div Every Two Clicks</title>
+    <style>
+        #d1 {
+            background-color: blueviolet;
+            width: 600px;
+            height: 300px;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1"></div>
+
+    <script>
+        var cha = document.getElementById("d1");
+        var clickCount = 0; // Counter to track clicks
+
+        cha.onclick = function () {
+            clickCount++; // Increase click count
+
+            if (clickCount === 1) {
+                cha.style.backgroundColor = "blue";
+                cha.style.width = "300px";
+            } else if (clickCount === 3) { 
+                // On the third click, reset to original state
+                cha.style.backgroundColor = "blueviolet";
+                cha.style.width = "600px";
+                clickCount = 0; // Reset counter
+            }
+        };
+    </script>
+</body>
+</html>
+ -->

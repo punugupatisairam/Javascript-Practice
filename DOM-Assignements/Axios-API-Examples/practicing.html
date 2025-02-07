@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+</head>
+<body>
+    <div id="pro">
+        
+    </div>
+    
+    <script>
+        var prod = document.getElementById("pro");
+        var prodata = [];
+        axios.get("https://fakestoreapi.in/api/products").then((data)=>{
+            prodata = data.data.products; 
+            // console.log(data.data.products[0]); 
+            // console.log(prodata[0].brand);
+            
+            
+            getdata(prodata);
+        }) 
+
+        function getdata(arr){
+            // console.log(arr.data.data.products[0].brand);
+            
+            arr.forEach(p=> {
+                console.log(p.brand);
+                
+            var mdiv = document.createElement("div")
+            var nam = document.createElement("h1")
+            nam.innerHTML=p.brand;
+
+            mdiv.appendChild(nam);
+            prod.appendChild(mdiv);
+            });
+
+        }
+        
+
+
+    </script>
+</body>
+</html>

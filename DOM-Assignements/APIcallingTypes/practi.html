@@ -1,4 +1,4 @@
-<html lang="en">
+<!-- <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +15,84 @@
                 // console.log(res);
                 console.log(e);
         })
+
+    </script>
+</body>
+</html> -->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+</head>
+<style>
+    img{
+        width: 200px;
+        height:200px;
+    }
+</style>
+<body>
+    <div id="d1"></div>
+    <script>
+
+        var data = [];
+        axios.get("https://fakestoreapi.com/products").then((res)=>{
+            data=res.data
+            // console.log(data);
+            getdata(data)
+            
+        })
+        // console.log(data);
+        function getdata(arr){
+            var ndata = document.getElementById("d1");
+
+            arr.forEach((p)=>{
+         
+                var sdiv = document.createElement("div");
+
+                var mdiv = document.createElement("div");
+                mdiv.innerHTML=p.title
+                sdiv.appendChild(mdiv)
+
+                var p1 = document.createElement("img")
+                p1.src=p.image
+                sdiv.appendChild(p1)
+                ndata.appendChild(sdiv)
+            })
+        }       
+    </script>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #d1{
+        /* border-radius: red solid 2px; */
+        background-color: aquamarine ;
+        width: 600px;
+        height: 400px;
+        border: 5px solid yellow;
+    }
+</style>
+
+<body>
+    <div id="d1">click me nnnnnnnnnnnnnnnnn
+    </div>
+    <script>
+        // mbox = document.getElementById("d1")
+        // // nbox = document.createElement("div")
+        // mbox.onclick=function(){
+        //     mbox.style.backgroundColor="blue"
+        // }
 
     </script>
 </body>
